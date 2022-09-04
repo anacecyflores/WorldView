@@ -1,4 +1,4 @@
-# WorldView 🌎
+# WorldView 🗺
 
 🤝  Collaborator's Github: [Ana C. Flores](https://github.com/anacecyflores1), [Mason Benson](https://github.com/mbenson025), [Cristian Vargas ](https://github.com/vcristian1).
 
