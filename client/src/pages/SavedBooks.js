@@ -56,7 +56,7 @@ const SavedBooks = () => {
         <h2>
           {userData.savedBooks?.length
             ? `Viewing ${userData.savedBooks.length} saved ${
-                userData.savedBooks.length === 1 ? "book" : "books"
+                userData.savedBooks.length === 1 ? "country" : "countries"
               }:`
             : "You have no saved countries!"}
         </h2>
