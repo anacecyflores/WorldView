@@ -1,12 +1,12 @@
-# WorldView
+# WorldView 🌎
 
 🤝  Collaborator's Github: [Ana C. Flores](https://github.com/anacecyflores1), [Mason Benson](https://github.com/mbenson025), [Cristian Vargas ](https://github.com/vcristian1).
 
-[Deployed App Link]()
+🌍 [Deployed App Link]() 🌎
 
-![GitHub](https://img.shields.io/github/license/anacecyflores1/BookSearchEngine)
-![GitHub language count](https://img.shields.io/github/languages/count/anacecyflores1/BookSearchEngine)
-![GitHub top language](https://img.shields.io/github/languages/top/anacecyflores1/BookSearchEngine)
+![GitHub](https://img.shields.io/github/license/anacecyflores1/WorldView)
+![GitHub language count](https://img.shields.io/github/languages/count/anacecyflores1/WorldView)
+![GitHub top language](https://img.shields.io/github/languages/top/anacecyflores1/WorldView)
 
 ## Table of Contents
 
@@ -17,6 +17,10 @@
 - [License](#license)
 
 ## Description
+
+```
+React Globe
+```
 
 ## Usage
 
