@@ -1,5 +1,6 @@
 body {
   font-family: 'Rubik', sans-serif;
+  background-color: rgb(151, 214, 207);
 }
 
 h1,
@@ -12,6 +13,6 @@ h6 {
 }
 
 .small {
-  font-weight: 300;
+  font-weight: 400;
   font-style: italic;
 }
