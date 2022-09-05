@@ -4,6 +4,10 @@
 
 🌍 [Deployed App Link]() 🌎
 
+🌐 [Globe Demo Link](https://wvtestapp.herokuapp.com/) 🌐
+
+<br>
+
 ![GitHub](https://img.shields.io/github/license/anacecyflores1/WorldView)
 ![GitHub language count](https://img.shields.io/github/languages/count/anacecyflores1/WorldView)
 ![GitHub top language](https://img.shields.io/github/languages/top/anacecyflores1/WorldView)
