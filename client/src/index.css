@@ -24,3 +24,24 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+/* booksearch css */
+
+body {
+  font-family: 'Rubik', sans-serif;
+  background-color: rgb(151, 214, 207);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Rubik Mono One', sans-serif;
+}
+
+.small {
+  font-weight: 400;
+  font-style: italic;
+}
