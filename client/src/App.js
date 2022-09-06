@@ -8,9 +8,21 @@ import {
 } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
 
+import './App.css';
+import styled from 'styled-components';
+import { Canvas } from '@react-three/fiber';
+import { Suspense } from 'react';
+import { Earth } from './components/earth';
+// import { TopSection } from "./components/topSection";
+
 import SearchBooks from './pages/SearchBooks';
 import SavedBooks from './pages/SavedBooks';
 import Navbar from './components/Navbar';
+
+const CanvasContainer = styled.div`
+  width: 60%;
+  height: 60%;
+`;
 
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
@@ -38,27 +50,29 @@ const client = new ApolloClient({
 
 function App() {
   return (
-    <ApolloProvider client={client}>
-      <Router>
-        <>
-          <Navbar />
-          <Routes>
-            <Route 
-              path="/" 
-              element={<SearchBooks/>} 
-            />
-            <Route 
-              path="/saved" 
-              element={<SavedBooks/>} 
-            />
-            <Route 
-              path='*' 
-              element={<h1 className="display-2">Wrong page!</h1>}
-            />
-          </Routes>
-        </>
-      </Router>
-    </ApolloProvider>
+    <CanvasContainer>
+      <ApolloProvider client={client}>
+        <Router>
+          <>
+            <Navbar />
+            <Routes>
+              <Route path="/" element={<SearchBooks />} />
+              <Route path="/saved" element={<SavedBooks />} />
+              <Route
+                path="*"
+                element={<h1 className="display-2">Wrong page!</h1>}
+              />
+            </Routes>
+          </>
+        </Router>
+      </ApolloProvider>
+      {/* <TopSection /> */}
+      <Canvas>
+        <Suspense fallback={null}>
+          <Earth />
+        </Suspense>
+      </Canvas>
+    </CanvasContainer>
   );
 }
 
