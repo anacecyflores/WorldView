@@ -8,12 +8,12 @@ import {
 } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
 
-import './App.css';
+// import './App.css';
+import './index.css';
 import styled from 'styled-components';
 import { Canvas } from '@react-three/fiber';
 import { Suspense } from 'react';
 import { Earth } from './components/earth';
-// import { TopSection } from "./components/topSection";
 
 import SearchBooks from './pages/SearchBooks';
 import SavedBooks from './pages/SavedBooks';
@@ -66,7 +66,6 @@ function App() {
           </>
         </Router>
       </ApolloProvider>
-      {/* <TopSection /> */}
       <Canvas>
         <Suspense fallback={null}>
           <Earth />
