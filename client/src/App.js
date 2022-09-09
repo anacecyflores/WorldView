@@ -18,10 +18,11 @@ import { Earth } from './components/earth';
 import SearchBooks from './pages/SearchBooks';
 import SavedBooks from './pages/SavedBooks';
 import Navbar from './components/Navbar';
+import topSection from './components/topSection/index.js'
 
 const CanvasContainer = styled.div`
-  width: 60%;
-  height: 60%;
+  width: 100%;
+  height: 100%;
 `;
 
 // Construct our main GraphQL API endpoint
