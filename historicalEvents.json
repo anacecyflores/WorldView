@@ -1,104 +1,314 @@
+
 {
   "events": [
     {
-      "id": [1],
-      "date": "1803",
-      "location": "USA",
-      "latitude": "-91°03′14.3″W",
-      "longitude": "34°38′44.5″N ",
-      "header": "Lousiana Purchase",
-      "summary": "U.S. negotiates Louisiana Purchase from France: for $15 million, U.S. doubles its domain, increasing its territory by 827,000 sq mi (2,144,500 sq km), from Mississippi River to Rockies and from Gulf of Mexico to British North America.",
-      "link": "https://www.infoplease.com/encyclopedia/history/north-america/us/louisiana-purchase"
+    "id" : [1],
+    "date": "1803",
+    "location": "USA",
+    "latitude": "-91 03′14.3",
+    "longitude": "34 38′44.5",
+    "header": "Lousiana Purchase",
+    "summary": "U.S. negotiates Louisiana Purchase from France: for $15 million, U.S. doubles its domain, increasing its territory by 827,000 sq mi (2,144,500 sq km), from Mississippi River to Rockies and from Gulf of Mexico to British North America.",
+    "link": "https://www.infoplease.com/encyclopedia/history/north-america/us/louisiana-purchase"
     },
-    {
-      "id": [2],
-      "date": "1804",
-      "location": "HAITI",
-      "latitude": "-72.2852° W",
-      "longitude": "18.9712° N ",
-      "header": "Haiti declares independence from France",
-      "summary": "first black nation to gain freedom from European colonial rule. Napoleon transforms the Consulate of France into an empire, proclaims himself emperor of France, systematizes French law under Code Napoleon. In the U.S., Alexander Hamilton is mortally wounded in duel with Aaron Burr. Lewis and Clark expedition begins exploration of what is now northwest U.S.",
-      "link": "https://www.infoplease.com/world/event/haiti"
+     {
+    "id" : [2],
+    "date": "1804",
+    "location": "HAITI",
+    "latitude": "-72.2852",
+    "longitude": "18.9712",
+    "header": "Haiti declares independence from France",
+    "summary": "first black nation to gain freedom from European colonial rule. Napoleon transforms the Consulate of France into an empire, proclaims himself emperor of France, systematizes French law under Code Napoleon. In the U.S., Alexander Hamilton is mortally wounded in duel with Aaron Burr. Lewis and Clark expedition begins exploration of what is now northwest U.S.",
+    "link": "https://www.infoplease.com/world/countries/haiti"
     },
-    {
-      "id": [3],
-      "date": "1869",
-      "location": "RUSSIA",
-      "latitude": "61.5240° N",
-      "longitude": "105.3188° E ",
-      "header": "Mendeleev's periodic table of elements.",
-      "summary": "Russiachemist. He is famous for his formulation (1869) of the periodic law and the invention of the periodic table, a classification of the elements; with Lothar Meyer, who had independently reached similar conclusions, he was awarded the Davy medal in 1882. From his remarkable table Mendeleev predicted the properties of elements then unknown; three of these (gallium, scandium, and germanium) were later discovered. He studied also the nature of solutions and the expansion of liquids. An outstanding teacher, he was professor at the Univ. of St. Petersburg (1868–90). He directed the bureau of weights and measures from 1893 and served as government adviser on the development of the petroleum industry. .",
-      "link": "https://www.infoplease.com/encyclopedia/science/chemistry/concepts/periodic-table"
+     {
+    "id" : [3],
+    "date": "1869",
+    "location": "RUSSIA",
+    "latitude": "61.5240",
+    "longitude": "105.3188",
+    "header": "Mendeleev's periodic table of elements.",
+    "summary": "Russiachemist. He is famous for his formulation (1869) of the periodic law and the invention of the periodic table, a classification of the elements; with Lothar Meyer, who had independently reached similar conclusions, he was awarded the Davy medal in 1882. From his remarkable table Mendeleev predicted the properties of elements then unknown; three of these (gallium, scandium, and germanium) were later discovered. He studied also the nature of solutions and the expansion of liquids. An outstanding teacher, he was professor at the Univ. of St. Petersburg (1868–90). He directed the bureau of weights and measures from 1893 and served as government adviser on the development of the petroleum industry. .",
+    "link": "https://www.infoplease.com/encyclopedia/science/chemistry/concepts/periodic-table"
     },
-    {
-      "id": [4],
-      "date": "1886",
-      "location": "CHICAGO,USA",
-      "latitude": "41.8781° N",
-      "longitude": "-87.6298° W ",
-      "header": "Bombing at Haymarket Square",
-      "summary": "Chicago, kills seven policemen and injures many others. Eight alleged anarchists accused—three imprisoned, one commits suicide, four hanged. (In 1893, Illinois governor Altgeld, critical of trial, pardons three survivors.) .",
-      "link": "https://www.infoplease.com/encyclopedia/history/north-america/us/haymarket-square-riot"
+     {
+    "id" : [4],
+    "date": "1886",
+    "location": "CHICAGO,USA",
+    "latitude": "41.8781",
+    "longitude": "-87.6298",
+    "header": "Bombing at Haymarket Square",
+    "summary": "Chicago, kills seven policemen and injures many others. Eight alleged anarchists accused—three imprisoned, one commits suicide, four hanged. (In 1893, Illinois governor Altgeld, critical of trial, pardons three survivors.) .",
+    "link": "https://www.infoplease.com/encyclopedia/history/north-america/us/haymarket-square-riot"
     },
-    {
-      "id": [5],
-      "date": "1894",
-      "location": "NEW ZEALAND",
-      "latitude": "-40.9006° S",
-      "longitude": "174.8860° E ",
-      "header": "New Zealand becomes first event in the world to grant women the vote.",
-      "summary": "With the signing of the Electoral Bill by Governor Lord Glasgow, New Zealand became the first event in the world to grant national voting rights to women on this day, i.e. September 19, in 1893. The landmark legislation was the outcome of years of suffragette meetings in towns and cities across the event..",
-      "link": "https://www.infoplease.com/history/womens-history/womens-suffrage"
+     {
+    "id" : [5],
+    "date": "1894",
+    "location": "NEW ZEALAND",
+    "latitude": "-40.9006",
+    "longitude": "174.8860",
+    "header": "New Zealand becomes first country in the world to grant women the vote.",
+    "summary": "With the signing of the Electoral Bill by Governor Lord Glasgow, New Zealand became the first country in the world to grant national voting rights to women on this day, i.e. September 19, in 1893. The landmark legislation was the outcome of years of suffragette meetings in towns and cities across the country..",
+    "link": "https://www.infoplease.com/history/womens-history/womens-suffrage"
     },
-    {
-      "id": [6],
-      "date": "1899",
-      "location": " SOUTH AFRICA",
-      "latitude": "-30.5595° S",
-      "longitude": "22.9375° E ",
-      "header": "Boer War (or South African War)",
-      "summary": "Conflict between British and Boers (descendants of Dutch settlers of South Africa). Causes rooted in longstanding territorial disputes and in friction over political rights for English and other “uitlanders” following 1886 discovery of vast gold deposits in Transvaal. (British victorious as war ends in 1902.) Casualties: 5,774 British dead, about 4,000 Boers. Union of South Africa established in 1908 as confederation of colonies; becomes British dominion in 1910.",
-      "link": "https://www.infoplease.com/encyclopedia/history/asia-africa/south-africa/south-african-war/the-war"
+     {
+    "id" : [6],
+    "date": "1899",
+    "location": " SOUTH AFRICA",
+    "latitude": "-30.5595",
+    "longitude": "22.9375",
+    "header": "Boer War (or South African War)",
+    "summary": "Conflict between British and Boers (descendants of Dutch settlers of South Africa). Causes rooted in longstanding territorial disputes and in friction over political rights for English and other “uitlanders” following 1886 discovery of vast gold deposits in Transvaal. (British victorious as war ends in 1902.) Casualties: 5,774 British dead, about 4,000 Boers. Union of South Africa established in 1908 as confederation of colonies; becomes British dominion in 1910.",
+    "link": "https://www.infoplease.com/encyclopedia/history/asia-africa/south-africa/south-african-war/the-war"
     },
-    {
-      "id": [7],
-      "date": "1819",
-      "location": "SOUTH AMERICA",
-      "latitude": "-8.7832° S",
-      "longitude": "-55.4915° W ",
-      "header": "Simón Bolívar liberates New Granada (now Colombia",
-      "summary": "Simón Bolívar liberates New Granada (now Colombia, Venezuela, and Ecuador) as Spain loses hold on South Americanevents; named president of Colombia.",
-      "link": "https://www.infoplease.com/encyclopedia/history/bios/latin-america/bolivar-simon"
+     {
+    "id" : [7], 
+    "date": "1819",
+    "location": "SOUTH AMERICA",
+    "latitude": "-8.7832",
+    "longitude": "-55.4915",
+    "header": "Simón Bolívar liberates New Granada (now Colombia",
+    "summary": "Simón Bolívar liberates New Granada (now Colombia, Venezuela, and Ecuador) as Spain loses hold on South American countries; named president of Colombia.",
+    "link": "https://www.infoplease.com/encyclopedia/history/bios/latin-america/bolivar-simon"
     },
-    {
-      "id": [8],
-      "date": "1824",
-      "location": "MEXICO",
-      "latitude": "23.6345° N",
-      "longitude": "-102.5528° W ",
-      "header": "Mexico becomes a republic",
-      "summary": "Mexico becomes a republic three years after declaring independence from Spain..",
-      "link": "https://www.infoplease.com/event/mexico"
+     {
+    "id" : [8],
+    "date": "1824",
+    "location": "MEXICO",
+    "latitude": "23.6345",
+    "longitude": "-102.5528",
+    "header": "Mexico becomes a republic",
+    "summary": "Mexico becomes a republic three years after declaring independence from Spain..",
+    "link": "https://www.infoplease.com/countries/mexico"
     },
-    {
-      "id": [9],
-      "date": "1824",
-      "location": "FRANCE",
-      "latitude": "46.2276° N",
-      "longitude": "2.2137° E ",
-      "header": "Joseph-Nicéphore Niepce takes the world's first photograph.",
-      "summary": "The French physicist, Joseph Nicéphore Niépce, made the first negative (on paper) in 1816 and the first known photograph (on metal; he called it a heliograph) in 1826. By the latter date he had directed his investigations away from paper surfaces and negatives (having invented, in the meantime, what is now called the photogravure process of mechanical reproduction) and toward sensitized metallic surfaces. In 1827 Niépce had also begun his association with Louis Jacques Mandé Daguerre, a French painter who had been experimenting along parallel lines. A partnership was formed and they collaborated until Niépce's death in 1833, after which Daguerre continued their work for the next six years. In 1839 he announced the invention of a method for making a direct positive image on a silver plate—the daguerreotype.",
-      "link": "https://www.infoplease.com/encyclopedia/arts/visual/photography/photography-still"
+     {
+    "id" : [9],
+    "date": "1824",
+    "location": "FRANCE",
+    "latitude": "46.2276",
+    "longitude": "2.2137",
+    "header": "Joseph-Nicéphore Niepce takes the world's first photograph.",
+    "summary": "The French physicist, Joseph Nicéphore Niépce, made the first negative (on paper) in 1816 and the first known photograph (on metal; he called it a heliograph) in 1826. By the latter date he had directed his investigations away from paper surfaces and negatives (having invented, in the meantime, what is now called the photogravure process of mechanical reproduction) and toward sensitized metallic surfaces. In 1827 Niépce had also begun his association with Louis Jacques Mandé Daguerre, a French painter who had been experimenting along parallel lines. A partnership was formed and they collaborated until Niépce's death in 1833, after which Daguerre continued their work for the next six years. In 1839 he announced the invention of a method for making a direct positive image on a silver plate—the daguerreotype.",
+    "link": "https://www.infoplease.com/encyclopedia/arts/visual/photography/photography-still"
     },
-    {
-      "id": [10],
-      "date": "1876",
-      "location": "BOSTON,USA",
-      "latitude": "42.3601° N",
-      "longitude": "-71.0589° W ",
-      "header": "Alexander Graham Bell patents the telephone.",
-      "summary": "As early as 1865, Bell conceived the idea of transmitting speech by electric waves. In 1875, while he was experimenting with a multiple harmonic telegraph, the principle of transmission and reproduction came to him. By Mar. 10, 1876, his apparatus was so far developed that the first complete sentence transmitted, Watson, come here; I want you, was distinctly heard by his assistant. The first demonstration took place before the American Academy of Arts and Sciences in Boston on May 10, 1876, and a more significant one, at the Philadelphia Centennial Exposition the same year, introduced the telephone to the world. The Bell Telephone Company was organized in July, 1877. A long period of patent litigation followed in which Bell's claims were completely upheld by the U.S. Supreme Court.",
-      "link": "https://www.infoplease.com/encyclopedia/science/tech/electrical-engineers/bell-alexander-graham"
+     {
+    "id" : [10],    
+    "date": "1876",
+    "location": "BOSTON,USA",
+    "latitude": "42.3601",
+    "longitude": "-71.0589",
+    "header": "Alexander Graham Bell patents the telephone.",
+    "summary": "As early as 1865, Bell conceived the idea of transmitting speech by electric waves. In 1875, while he was experimenting with a multiple harmonic telegraph, the principle of transmission and reproduction came to him. By Mar. 10, 1876, his apparatus was so far developed that the first complete sentence transmitted, Watson, come here; I want you, was distinctly heard by his assistant. The first demonstration took place before the American Academy of Arts and Sciences in Boston on May 10, 1876, and a more significant one, at the Philadelphia Centennial Exposition the same year, introduced the telephone to the world. The Bell Telephone Company was organized in July, 1877. A long period of patent litigation followed in which Bell's claims were completely upheld by the U.S. Supreme Court.",
+    "link": "https://www.infoplease.com/encyclopedia/science/tech/electrical-engineers/bell-alexander-graham"
+    },
+       {
+    "id" : [10],    
+    "date": "1909",
+    "location": "North Pole",
+    "latitude": "",
+    "longitude": "",
+    "header": "North Pole reportedly reached by American explorers!",
+    "summary": "Peary, Robert Edwin pēr´ē [key], 1856–1920, American arctic explorer, b. Cresson, Pa. In 1881 he entered the U.S. navy as a civil engineer and for several years served in Nicaragua, where he was engaged in making surveys for the Nicaragua Canal. He became interested in arctic exploration and made a trip to the interior of Greenland in 1886; later (1891–92), having secured a leave of absence from the navy, he led an expedition to Greenland for scientific study and exploration. Important ethnological and meteorological observations were recorded, a long sled journey to the northeast coast of Greenland was made, Peary Land was explored, and the insularity and approximate northerly extension of Greenland were confirmed.",
+    "link": "https://www.infoplease.com/encyclopedia/history/bios/us/peary-robert-edwin"
+    },
+     {
+    "id" : [11],    
+    "date": "1914",
+    "location": "SARAJEVO, BOSNIA",
+    "latitude": "",
+    "longitude": "",
+    "header": "World War I Starts",
+    "summary": "Austrian Archduke Francis Ferdinand and wife Sophie are assassinated; Austria declares war on Serbia, Germany on Russia and France, Britain on Germany.",
+    "link": "https://www.infoplease.com/history/world/world-war-i-1914-1918"
+    },
+     {
+    "id" : [12],    
+    "date": "1914",
+    "location": "PANAMA",
+    "latitude": "",
+    "longitude": "",
+    "header": "Panama Canal officially opened.",
+    "summary": "Panama Canal, waterway across the Isthmus of Panama, connecting the Atlantic (by way of the Caribbean Sea) and Pacific oceans, built by the United States (1904–14, on territory leased from the republic of Panama) and expanded by Pamana (2007–16). The canal, running S and SE from Limón Bay at Colón on the Atlantic to the Bay of Panama at Balboa on the Pacific, is 40 mi (64 km) long from shore to shore and 51 mi (82 km) long between channel entrances. The Pacific terminus is 27 mi (43 km) east of the Caribbean terminus. The minimum depth is 41 ft (12.5 m).",
+    "link": "https://www.infoplease.com/encyclopedia/places/latin-america/panama/panama-canal"
+    },
+     {
+    "id" : [13],    
+    "date": "1920",
+    "location": "GENEVA, SWITZERLAND",
+    "latitude": "",
+    "longitude": "",
+    "header": "League of Nations holds first meeting at Geneva, Switzerland.",
+    "summary": "League of Nations, former international organization, established by the peace treaties that ended World War I. Like its successor, the United Nations, its purpose was the promotion of international peace and security. The League was a product of World War I in the sense that that conflict convinced most persons of the necessity of averting another such cataclysm. But its background lay in the visions of men like the duc de Sully and Immanuel Kant and in the later growth of formal international organizations like the International Telegraphic Union (1865) and the Universal Postal Union (1874). The Red Cross, the Hague Conferences, and the Permanent Court of Arbitration (Hague Tribunal) were also important stepping-stones toward international cooperation.",
+    "link": "https://www.infoplease.com/encyclopedia/social-science/government/un/league-of-nations"
+    },
+     {
+    "id" : [14],    
+    "date": "1920",
+    "location": "USA",
+    "latitude": "",
+    "longitude": "",
+    "header": "WOMEN WIN RIGHT TO VOTE",
+    "summary": "19TH amendment to the U.S. Constitution, ratified in 1920, guaranteeing women the right to vote.",
+    "link": "https://www.infoplease.com/dictionary/nineteenth-amendment"
+    },
+     {
+    "id" : [15],    
+    "date": "1923",
+    "location": "MUNICH, GERMANY",
+    "latitude": "",
+    "longitude": "",
+    "header": "Hitler writes Mein Kampf",
+    "summary": "Hitler began writing Mein Kampf in 1924 in Landsberg prison, following his conviction for high treason for attempting to overthrow the German republic in November 1923 in the so-called Beer Hall Putsch. Although his coup failed, Hitler used his trial as a pulpit to spread Nazi propaganda. Largely unknown before this event, he gained immediate notoriety in the German and international press. The court sentenced him to five years imprisonment, of which he served less than 9 months. With his political career at an all-time low, he hoped that publishing the book would earn him some money and serve as a propaganda platform to air his radical views and attack those whom he accused of betraying him and Germany.",
+    "link": "https://encyclopedia.ushmm.org/content/en/article/mein-kampf"
+    }, {
+    "id" : [16],    
+    "date": "1876",
+    "location": "",
+    "latitude": "",
+    "longitude": "",
+    "header": "",
+    "summary": "",
+    "link": ""
+    },
+     {
+    "id" : [17],    
+    "date": "1876",
+    "location": "",
+    "latitude": "",
+    "longitude": "",
+    "header": "",
+    "summary": "",
+    "link": ""
+    },
+     {
+    "id" : [18],    
+    "date": "1876",
+    "location": "",
+    "latitude": "",
+    "longitude": "",
+    "header": "",
+    "summary": "",
+    "link": ""
+    },
+     {
+    "id" : [19],    
+    "date": "1876",
+    "location": "",
+    "latitude": "",
+    "longitude": "",
+    "header": "",
+    "summary": "",
+    "link": ""
+    },
+     {
+    "id" : [20],    
+    "date": "1876",
+    "location": "",
+    "latitude": "",
+    "longitude": "",
+    "header": "",
+    "summary": "",
+    "link": ""
+    },
+     {
+    "id" : [21],    
+    "date": "1876",
+    "location": "",
+    "latitude": "",
+    "longitude": "",
+    "header": "",
+    "summary": "",
+    "link": ""
+    },
+     {
+    "id" : [22],    
+    "date": "1876",
+    "location": "",
+    "latitude": "",
+    "longitude": "",
+    "header": "",
+    "summary": "",
+    "link": ""
+    },
+     {
+    "id" : [23],    
+    "date": "1876",
+    "location": "",
+    "latitude": "",
+    "longitude": "",
+    "header": "",
+    "summary": "",
+    "link": ""
+    },
+     {
+    "id" : [24],    
+    "date": "1876",
+    "location": "",
+    "latitude": "",
+    "longitude": "",
+    "header": "",
+    "summary": "",
+    "link": ""
+    },
+
+     {
+    "id" : [25],    
+    "date": "1876",
+    "location": "",
+    "latitude": "",
+    "longitude": "",
+    "header": "",
+    "summary": "",
+    "link": ""
+    }, {
+    "id" : [26],    
+    "date": "1876",
+    "location": "",
+    "latitude": "",
+    "longitude": "",
+    "header": "",
+    "summary": "",
+    "link": ""
+    },
+     {
+    "id" : [27],    
+    "date": "1876",
+    "location": "",
+    "latitude": "",
+    "longitude": "",
+    "header": "",
+    "summary": "",
+    "link": ""
+    },
+     {
+    "id" : [28],    
+    "date": "1876",
+    "location": "",
+    "latitude": "",
+    "longitude": "",
+    "header": "",
+    "summary": "",
+    "link": ""
+    },
+     {
+    "id" : [29],    
+    "date": "1876",
+    "location": "",
+    "latitude": "",
+    "longitude": "",
+    "header": "",
+    "summary": "",
+    "link": ""
+    },
+     {
+    "id" : [30],    
+    "date": "1876",
+    "location": "",
+    "latitude": "",
+    "longitude": "",
+    "header": "",
+    "summary": "",
+    "link": ""
     }
-  ]
+]
 }
