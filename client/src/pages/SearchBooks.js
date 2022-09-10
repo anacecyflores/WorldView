@@ -94,7 +94,11 @@ const SearchBooks = () => {
     <>
       <Jumbotron fluid className="text-light bg-dark">
         <Container>
+<<<<<<< HEAD
           <h1>Search for Countries</h1>
+=======
+          <h1>Search for events:</h1>
+>>>>>>> 4c2b604af2d3ce27c18793e2fa0b0ec0b642ba95
           <Form onSubmit={handleFormSubmit}>
             <Form.Row>
               <Col xs={16} md={12}>
@@ -104,7 +108,7 @@ const SearchBooks = () => {
                   onChange={(e) => setSearchInput(e.target.value)}
                   type="text"
                   size="lg"
-                  placeholder="Search for any country "
+                  placeholder="Search for any event "
                 />
               </Col>
               <Col xs={12} md={4}>
@@ -119,7 +123,7 @@ const SearchBooks = () => {
         <h2>
           {searchedBooks.length
             ? `Viewing ${searchedBooks.length} results:`
-            : " 📍Search for a country to begin"}
+            : " 📍Search for a event to begin"}
         </h2>
         <CardColumns>
           {searchedBooks.map((book) => {
@@ -145,8 +149,8 @@ const SearchBooks = () => {
                       onClick={() => handleSaveBook(book.bookId)}
                     >
                       {savedBookIds?.some((savedId) => savedId === book.bookId)
-                        ? "Country Already Saved!"
-                        : "Save This Country!"}
+                        ? "event Already Saved!"
+                        : "Save This event!"}
                     </Button>
                   )}
                 </Card.Body>

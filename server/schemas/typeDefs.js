@@ -1,4 +1,4 @@
-const { gql } = require('apollo-server-express');
+const { gql } = require("apollo-server-express");
 
 const typeDefs = gql`
   type User {
@@ -16,6 +16,17 @@ const typeDefs = gql`
     image: String
     link: String
     title: String!
+  }
+
+  type Events {
+    eventId: ID!
+    location: String
+    date: [String]
+    longitude: [String]
+    latitude: [String]
+    summary: String
+    link: String
+    header: String!
   }
 
   type Auth {
