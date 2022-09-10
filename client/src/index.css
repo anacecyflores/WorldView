@@ -5,7 +5,11 @@ body,
   height: 100%;
   margin: 0;
   padding: 0;
-  background-color: #050e21
+  background-color: #010818
+}
+
+#header {
+  text-align: center;
 }
 
 /* #root {
