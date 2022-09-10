@@ -70,7 +70,21 @@ export function Earth(props) {
     lng: -87.6298,
   };
 
-  let cities = [point1, point2];
+  //barcelona
+  let point3 = {
+    name: 'Barcelona',
+    lat: 41.3874,
+    lng: 2.1686,
+  };
+
+  //san salvador
+  let point4 = {
+    name: 'San Salvador',
+    lat: 13.6929,
+    lng: -89.2182,
+  };
+
+  let cities = [point1, point2, point3, point4];
 
   return (
     <>
