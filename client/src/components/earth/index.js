@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import { useLoader, useFrame } from '@react-three/fiber';
 import { TextureLoader } from 'three';
 import { OrbitControls, Stars } from '@react-three/drei';
@@ -17,7 +17,6 @@ export function Earth(props) {
   );
 
   //north/east are positive and west/south are negative
-
   function convertLatLngToCortesian(p) {
     let phi = (90 - p.lat) * (Math.PI / 180);
     let theta = (p.lng + 180) * (Math.PI / 180);
@@ -47,10 +46,12 @@ export function Earth(props) {
   let pos = convertLatLngToCortesian(point1);
   let pos2 = convertLatLngToCortesian(point2);
 
+  let meshColor = 'red';
+
   return (
     <>
       {/* light from all directions */}
-      <ambientLight intensity={1} />
+      <ambientLight intensity={2} />
       {/* <pointLight color="#f6f3ea" position={[2, 0, 2]} intensity={1.2} /> */}
       {/* stars background effect */}
       <Stars
@@ -66,19 +67,25 @@ export function Earth(props) {
         <sphereGeometry args={[1.005, 32, 32]} />
         <meshPhongMaterial
           map={cloudsMap}
-          opacity={0.4}
+          opacity={0.3}
           depthWrite={true}
           transparent={true}
           side={THREE.DoubleSide}
         />
       </mesh>
       {/* coordinate one */}
-      <mesh position={[pos.x, pos.z, pos.y]}>
+      <mesh
+        position={[pos.x, pos.z, pos.y]}
+        onClick={(e) => console.log('Clicked')}
+      >
         <sphereGeometry args={[0.01, 20, 20]} />
-        <meshBasicMaterial color="red" />
+        <meshBasicMaterial color={meshColor} />
       </mesh>
       {/* coordinate two */}
-      <mesh position={[pos2.x, pos2.z, pos2.y]}>
+      <mesh
+        position={[pos2.x, pos2.z, pos2.y]}
+        onClick={(e) => console.log('Clicked')}
+      >
         <sphereGeometry args={[0.01, 20, 20]} />
         <meshBasicMaterial color="red" />
       </mesh>
