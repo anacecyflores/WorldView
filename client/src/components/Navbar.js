@@ -21,7 +21,10 @@ const AppNavbar = () => {
           <Navbar.Collapse id="navbar">
             <Nav className="ml-auto">
               <Nav.Link as={Link} to="/">
-                Search For Event
+                About
+              </Nav.Link>
+              <Nav.Link onClick={() => setShowModal(true)}>
+                Log In
               </Nav.Link>
               {/* if user is logged in show saved books and logout */}
               {Auth.loggedIn() ? (
@@ -33,7 +36,7 @@ const AppNavbar = () => {
                 </>
               ) : (
                 <Nav.Link onClick={() => setShowModal(true)}>
-                  Login/Sign Up
+                  Sign Up
                 </Nav.Link>
               )}
             </Nav>

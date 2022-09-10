@@ -91,11 +91,7 @@ const SearchBooks = () => {
     <>
       <Jumbotron fluid className="text-light bg-dark">
         <Container>
-<<<<<<< HEAD
-          <h1>Search for events:</h1>
-=======
-          <h1>Search for a Country, and Historical Event!</h1>
->>>>>>> db82cc435754c254d5c76dffc3b127b27cb241fd
+          <h1>Search for Global Historical Events</h1>
 
           <Form onSubmit={handleFormSubmit}>
             <Form.Row>
@@ -106,7 +102,7 @@ const SearchBooks = () => {
                   onChange={(e) => setSearchInput(e.target.value)}
                   type="text"
                   size="lg"
-                  placeholder="Enter a Country "
+                  placeholder="ie: United Kingdom"
                 />
               </Col>
             </Form.Row>
@@ -118,15 +114,11 @@ const SearchBooks = () => {
                   onChange={(e) => setSearchInput(e.target.value)}
                   type="text"
                   size="lg"
-                  placeholder="Enter a Historical Event"
+                  placeholder="ie: Queen Elizabeth's II Death"
                 />
               </Col>
               <Col xs={12} md={4}>
-<<<<<<< HEAD
-                <Button as="input" type="button" value="Input" size="lg" />{" "}
-=======
-                <Button as="input" type="button" value="Search 🌎" size="lg"/>{' '}
->>>>>>> db82cc435754c254d5c76dffc3b127b27cb241fd
+                <Button as="input" type="button" value="Search 🌎" size="lg" />{" "}
               </Col>
             </Form.Row>
           </Form>
