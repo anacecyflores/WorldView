@@ -8,7 +8,7 @@ import EarthDayMap from '../../assets/textures/8k_earth_daymap.jpg';
 import EarthNormalMap from '../../assets/textures/8k_earth_normal_map.jpg';
 import EarthSpecularMap from '../../assets/textures/8k_earth_specular_map.jpg';
 import EarthCloudsMap from '../../assets/textures/8k_earth_clouds.jpg';
-import EarthNightMap from '../../assets/textures/8k_earth_nightmap.jpg';
+// import EarthNightMap from '../../assets/textures/8k_earth_nightmap.jpg';
 
 export function Earth(props) {
   const [colorMap, normalMap, specularMap, cloudsMap] = useLoader(
@@ -16,20 +16,43 @@ export function Earth(props) {
     [EarthDayMap, EarthNormalMap, EarthSpecularMap, EarthCloudsMap]
   );
 
-  // const earthRef = useRef();
-  // const cloudsRef = useRef();
+  //north/east are positive and west/south are negative
 
-  // useFrame(({ clock }) => {
-  //   const elapsedTime = clock.getElapsedTime();
+  function convertLatLngToCortesian(p) {
+    let phi = (90 - p.lat) * (Math.PI / 180);
+    let theta = (p.lng + 180) * (Math.PI / 180);
 
-  //   earthRef.current.rotation.y = elapsedTime / 6;
-  //   cloudsRef.current.rotation.y = elapsedTime / 6;
-  // });
+    let x = -(Math.sin(phi) * Math.cos(theta));
+    let y = Math.sin(phi) * Math.sin(theta);
+    let z = Math.cos(phi);
+    return {
+      x,
+      y,
+      z,
+    };
+  }
+
+  //los angeles
+  let point1 = {
+    lat: 34.0522,
+    lng: -118.2437,
+  };
+
+  //chicago
+  let point2 = {
+    lat: 41.8781,
+    lng: -87.6298,
+  };
+
+  let pos = convertLatLngToCortesian(point1);
+  let pos2 = convertLatLngToCortesian(point2);
 
   return (
     <>
+      {/* light from all directions */}
       <ambientLight intensity={1} />
       {/* <pointLight color="#f6f3ea" position={[2, 0, 2]} intensity={1.2} /> */}
+      {/* stars background effect */}
       <Stars
         radius={300}
         depth={60}
@@ -38,7 +61,7 @@ export function Earth(props) {
         saturation={0}
         fade={true}
       />
-      {/* <mesh ref={cloudsRef}> */}
+      {/* cloud wrapper */}
       <mesh>
         <sphereGeometry args={[1.005, 32, 32]} />
         <meshPhongMaterial
@@ -49,7 +72,17 @@ export function Earth(props) {
           side={THREE.DoubleSide}
         />
       </mesh>
-      {/* <mesh ref={earthRef}> */}
+      {/* coordinate one */}
+      <mesh position={[pos.x, pos.z, pos.y]}>
+        <sphereGeometry args={[0.01, 20, 20]} />
+        <meshBasicMaterial color="red" />
+      </mesh>
+      {/* coordinate two */}
+      <mesh position={[pos2.x, pos2.z, pos2.y]}>
+        <sphereGeometry args={[0.01, 20, 20]} />
+        <meshBasicMaterial color="red" />
+      </mesh>
+      {/* earth wrapper */}
       <mesh>
         <sphereGeometry args={[1, 32, 32]} />
         <meshPhongMaterial specularMap={specularMap} />
@@ -58,6 +91,7 @@ export function Earth(props) {
           normalMap={normalMap}
           metalness={0.7}
         />
+        {/* click and rotate earth controls */}
         <OrbitControls
           enableZoom={true}
           enablePan={true}

@@ -2,7 +2,7 @@
 
 🤝  Collaborator's Github: [Ana C. Flores](https://github.com/anacecyflores1), [Mason Benson](https://github.com/mbenson025), [Cristian Vargas ](https://github.com/vcristian1).
 
-🌍 [Deployed App Link]() 🌎
+🌍 [Deployed App Link](https://my-world-view.herokuapp.com/) 🌎
 
 🌐 [Globe Demo Link](https://wvtestapp.herokuapp.com/) 🌐
 
