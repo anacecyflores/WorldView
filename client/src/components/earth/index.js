@@ -16,6 +16,12 @@ export function Earth(props) {
     [EarthDayMap, EarthNormalMap, EarthSpecularMap, EarthCloudsMap]
   );
 
+  const coordRef = useRef();
+  const [hovered, setHover] = useState(false);
+  const [active, setActive] = useState(false);
+
+  // useFrame(() => {});
+
   //north/east are positive and west/south are negative
   function convertLatLngToCortesian(p) {
     let phi = (90 - p.lat) * (Math.PI / 180);
@@ -46,8 +52,6 @@ export function Earth(props) {
   let pos = convertLatLngToCortesian(point1);
   let pos2 = convertLatLngToCortesian(point2);
 
-  let meshColor = 'red';
-
   return (
     <>
       {/* light from all directions */}
@@ -75,11 +79,15 @@ export function Earth(props) {
       </mesh>
       {/* coordinate one */}
       <mesh
+        ref={coordRef}
+        {...props}
+        onPointerOver={(event) => setHover(true)}
+        onPointerOut={(event) => setHover(false)}
         position={[pos.x, pos.z, pos.y]}
-        onClick={(e) => console.log('Clicked')}
+        onClick={(event) => console.log('Clicked')}
       >
         <sphereGeometry args={[0.01, 20, 20]} />
-        <meshBasicMaterial color={meshColor} />
+        <meshBasicMaterial color={hovered ? 'red' : 'orange'} />
       </mesh>
       {/* coordinate two */}
       <mesh
