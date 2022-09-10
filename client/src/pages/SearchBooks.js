@@ -94,11 +94,10 @@ const SearchBooks = () => {
     <>
       <Jumbotron fluid className="text-light bg-dark">
         <Container>
-<<<<<<< HEAD
           <h1>Search for Countries</h1>
-=======
+
           <h1>Search for events:</h1>
->>>>>>> 4c2b604af2d3ce27c18793e2fa0b0ec0b642ba95
+
           <Form onSubmit={handleFormSubmit}>
             <Form.Row>
               <Col xs={16} md={12}>
