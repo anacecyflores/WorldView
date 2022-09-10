@@ -49,16 +49,16 @@ const SavedBooks = () => {
     <>
       <Jumbotron fluid className="text-light bg-dark">
         <Container>
-          <h1>Viewing {userData.username}'s countries!</h1>
+          <h1>Viewing {userData.username}'sevents!</h1>
         </Container>
       </Jumbotron>
       <Container>
         <h2>
           {userData.savedBooks?.length
             ? `Viewing ${userData.savedBooks.length} saved ${
-                userData.savedBooks.length === 1 ? "country" : "countries"
+                userData.savedBooks.length === 1 ? "event" : "event"
               }:`
-            : "You have no saved countries!"}
+            : "You have no savedevents!"}
         </h2>
         <CardColumns>
           {userData.savedBooks?.map((book) => {
@@ -79,7 +79,7 @@ const SavedBooks = () => {
                     className="btn-block btn-danger"
                     onClick={() => handleDeleteBook(book.bookId)}
                   >
-                    Delete this country!
+                    Delete this event!
                   </Button>
                 </Card.Body>
               </Card>
