@@ -1,19 +1,21 @@
 import React, { useState, useEffect } from "react";
-import {
-  Jumbotron,
-  Container,
-  Col,
-  Form,
-  Button,
-  Card,
-  CardColumns,
-} from "react-bootstrap";
+
+import Button from 'react-bootstrap/Button';
+import Jumbotron from 'react-bootstrap/Jumbotron';
+import Col from 'react-bootstrap/Col';
+import Form from 'react-bootstrap/Form';
+import Card from 'react-bootstrap/Card';
+import CardColumns from 'react-bootstrap/CardColumns';
+import Container from 'react-bootstrap/Container';
+
 
 import { useMutation } from "@apollo/client";
 import { SAVE_BOOK } from "../utils/mutations";
 import { saveBookIds, getSavedBookIds } from "../utils/localStorage";
 
 import Auth from "../utils/auth";
+
+
 
 const SearchBooks = () => {
   // create state for holding returned google api data
@@ -92,10 +94,10 @@ const SearchBooks = () => {
     <>
       <Jumbotron fluid className="text-light bg-dark">
         <Container>
-          <h1>Search for Countries!</h1>
+          <h1>Search for Countries</h1>
           <Form onSubmit={handleFormSubmit}>
             <Form.Row>
-              <Col xs={12} md={8}>
+              <Col xs={16} md={12}>
                 <Form.Control
                   name="searchInput"
                   value={searchInput}
@@ -106,9 +108,7 @@ const SearchBooks = () => {
                 />
               </Col>
               <Col xs={12} md={4}>
-                <Button type="submit" variant="success" size="lg">
-                  Search 🌎
-                </Button>
+                <Button as="input" type="button" value="Input" size="lg"/>{' '}
               </Col>
             </Form.Row>
           </Form>

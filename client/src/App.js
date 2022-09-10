@@ -11,6 +11,7 @@ import { setContext } from '@apollo/client/link/context';
 // import './App.css';
 import './index.css';
 import styled from 'styled-components';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import { Canvas } from '@react-three/fiber';
 import { Suspense } from 'react';
 import { Earth } from './components/earth';
@@ -19,6 +20,7 @@ import SearchBooks from './pages/SearchBooks';
 import SavedBooks from './pages/SavedBooks';
 import Navbar from './components/Navbar';
 import topSection from './components/topSection/index.js'
+import AppNavbar from './components/Navbar';
 
 const CanvasContainer = styled.div`
   width: 100%;
@@ -55,7 +57,7 @@ function App() {
       <ApolloProvider client={client}>
         <Router>
           <>
-            <Navbar />
+            <AppNavbar />
             <Routes>
               <Route path="/" element={<SearchBooks />} />
               <Route path="/saved" element={<SavedBooks />} />
@@ -68,9 +70,7 @@ function App() {
         </Router>
       </ApolloProvider>
       <Canvas>
-        <Suspense fallback={null}>
-          <Earth />
-        </Suspense>
+        <Earth />
       </Canvas>
     </CanvasContainer>
   );

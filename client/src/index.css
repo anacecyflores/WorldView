@@ -5,11 +5,13 @@ body,
   height: 100%;
   margin: 0;
   padding: 0;
+  background-color: #0e275b
 }
 
-#root {
+/* #root {
   background-color: #060c19
 }
+
 
 
 body {
@@ -24,4 +26,4 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
-}
+} */
