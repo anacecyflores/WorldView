@@ -20,8 +20,6 @@ export function Earth(props) {
   const [hovered, setHover] = useState(false);
   const [active, setActive] = useState(false);
 
-  // useFrame(() => {});
-
   //north/east are positive and west/south are negative
   function convertLatLngToCortesian(p) {
     let phi = (90 - p.lat) * (Math.PI / 180);
@@ -37,26 +35,48 @@ export function Earth(props) {
     };
   }
 
+  function createMesh(city) {
+    var pos = convertLatLngToCortesian(city);
+
+    return (
+      <mesh
+        ref={coordRef}
+        {...props}
+        onPointerOver={(event) => {
+          setHover(true);
+          console.log(event);
+        }}
+        onPointerOut={(event) => setHover(false)}
+        position={[pos.x, pos.z, pos.y]}
+        userData={city}
+      >
+        <sphereGeometry args={[0.01, 20, 20]} />
+        <meshBasicMaterial color={hovered ? 'red' : 'orange'} />
+      </mesh>
+    );
+  }
+
   //los angeles
   let point1 = {
+    name: 'Los Angeles',
     lat: 34.0522,
     lng: -118.2437,
   };
 
   //chicago
   let point2 = {
+    name: 'Chicago',
     lat: 41.8781,
     lng: -87.6298,
   };
 
-  let pos = convertLatLngToCortesian(point1);
-  let pos2 = convertLatLngToCortesian(point2);
+  let cities = [point1, point2];
 
   return (
     <>
       {/* light from all directions */}
       <ambientLight intensity={2} />
-      {/* <pointLight color="#f6f3ea" position={[2, 0, 2]} intensity={1.2} /> */}
+
       {/* stars background effect */}
       <Stars
         radius={300}
@@ -66,6 +86,7 @@ export function Earth(props) {
         saturation={0}
         fade={true}
       />
+
       {/* cloud wrapper */}
       <mesh>
         <sphereGeometry args={[1.005, 32, 32]} />
@@ -77,26 +98,10 @@ export function Earth(props) {
           side={THREE.DoubleSide}
         />
       </mesh>
-      {/* coordinate one */}
-      <mesh
-        ref={coordRef}
-        {...props}
-        onPointerOver={(event) => setHover(true)}
-        onPointerOut={(event) => setHover(false)}
-        position={[pos.x, pos.z, pos.y]}
-        onClick={(event) => console.log('Clicked')}
-      >
-        <sphereGeometry args={[0.01, 20, 20]} />
-        <meshBasicMaterial color={hovered ? 'red' : 'orange'} />
-      </mesh>
-      {/* coordinate two */}
-      <mesh
-        position={[pos2.x, pos2.z, pos2.y]}
-        onClick={(e) => console.log('Clicked')}
-      >
-        <sphereGeometry args={[0.01, 20, 20]} />
-        <meshBasicMaterial color="red" />
-      </mesh>
+
+      {/* coordinates */}
+      {cities.map((c) => createMesh(c))}
+
       {/* earth wrapper */}
       <mesh>
         <sphereGeometry args={[1, 32, 32]} />
@@ -106,6 +111,7 @@ export function Earth(props) {
           normalMap={normalMap}
           metalness={0.7}
         />
+
         {/* click and rotate earth controls */}
         <OrbitControls
           enableZoom={true}
