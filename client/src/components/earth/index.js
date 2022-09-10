@@ -3,6 +3,7 @@ import { useLoader, useFrame } from '@react-three/fiber';
 import { TextureLoader } from 'three';
 import { OrbitControls, Stars } from '@react-three/drei';
 import * as THREE from 'three';
+import historyArr from './events';
 
 import EarthDayMap from '../../assets/textures/8k_earth_daymap.jpg';
 import EarthNormalMap from '../../assets/textures/8k_earth_normal_map.jpg';
@@ -28,6 +29,7 @@ export function Earth(props) {
     let x = -(Math.sin(phi) * Math.cos(theta));
     let y = Math.sin(phi) * Math.sin(theta);
     let z = Math.cos(phi);
+    // console.log(x, z, y);
     return {
       x,
       y,
@@ -35,8 +37,8 @@ export function Earth(props) {
     };
   }
 
-  function createMesh(city) {
-    var pos = convertLatLngToCortesian(city);
+  function createMesh(wEvent) {
+    var pos = convertLatLngToCortesian(wEvent);
 
     return (
       <mesh
@@ -44,17 +46,18 @@ export function Earth(props) {
         {...props}
         onPointerOver={(event) => {
           setHover(true);
-          console.log(event);
+          console.log(event.object.userData);
         }}
         onPointerOut={(event) => setHover(false)}
         position={[pos.x, pos.z, pos.y]}
-        userData={city}
+        userData={wEvent}
       >
         <sphereGeometry args={[0.01, 20, 20]} />
         <meshBasicMaterial color={hovered ? 'red' : 'orange'} />
       </mesh>
     );
   }
+  //test locations-
 
   //los angeles
   let point1 = {
@@ -84,7 +87,8 @@ export function Earth(props) {
     lng: -89.2182,
   };
 
-  let cities = [point1, point2, point3, point4];
+  let worldEvents = historyArr;
+  // let cities = [point1, point2, point3, point4];
 
   return (
     <>
@@ -114,7 +118,7 @@ export function Earth(props) {
       </mesh>
 
       {/* coordinates */}
-      {cities.map((c) => createMesh(c))}
+      {worldEvents.map((w) => createMesh(w))}
 
       {/* earth wrapper */}
       <mesh>
