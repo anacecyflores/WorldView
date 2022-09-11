@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import { useLoader, useFrame } from '@react-three/fiber';
 import { TextureLoader } from 'three';
 import { OrbitControls, Stars } from '@react-three/drei';
@@ -20,6 +20,10 @@ export function Earth(props) {
   const coordRef = useRef();
   const [hovered, setHover] = useState(false);
   const [active, setActive] = useState(false);
+
+  useEffect(() => {
+    document.body.style.cursor = hovered ? 'pointer' : 'auto';
+  }, [hovered]);
 
   //north/east are positive and west/south are negative
   function convertLatLngToCortesian(p) {
@@ -57,38 +61,8 @@ export function Earth(props) {
       </mesh>
     );
   }
-  //test locations-
-
-  //los angeles
-  let point1 = {
-    name: 'Los Angeles',
-    lat: 34.0522,
-    lng: -118.2437,
-  };
-
-  //chicago
-  let point2 = {
-    name: 'Chicago',
-    lat: 41.8781,
-    lng: -87.6298,
-  };
-
-  //barcelona
-  let point3 = {
-    name: 'Barcelona',
-    lat: 41.3874,
-    lng: 2.1686,
-  };
-
-  //san salvador
-  let point4 = {
-    name: 'San Salvador',
-    lat: 13.6929,
-    lng: -89.2182,
-  };
 
   let worldEvents = historyArr;
-  // let cities = [point1, point2, point3, point4];
 
   return (
     <>
