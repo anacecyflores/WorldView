@@ -1,8 +1,9 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import { useLoader, useFrame } from '@react-three/fiber';
 import { TextureLoader } from 'three';
 import { OrbitControls, Stars } from '@react-three/drei';
 import * as THREE from 'three';
+import historyArr from './events';
 
 import EarthDayMap from '../../assets/textures/8k_earth_daymap.jpg';
 import EarthNormalMap from '../../assets/textures/8k_earth_normal_map.jpg';
@@ -20,6 +21,10 @@ export function Earth(props) {
   const [hovered, setHover] = useState(false);
   const [active, setActive] = useState(false);
 
+  useEffect(() => {
+    document.body.style.cursor = hovered ? 'pointer' : 'auto';
+  }, [hovered]);
+
   //north/east are positive and west/south are negative
   function convertLatLngToCortesian(p) {
     let phi = (90 - p.lat) * (Math.PI / 180);
@@ -28,6 +33,7 @@ export function Earth(props) {
     let x = -(Math.sin(phi) * Math.cos(theta));
     let y = Math.sin(phi) * Math.sin(theta);
     let z = Math.cos(phi);
+    // console.log(x, z, y);
     return {
       x,
       y,
@@ -35,8 +41,8 @@ export function Earth(props) {
     };
   }
 
-  function createMesh(city) {
-    var pos = convertLatLngToCortesian(city);
+  function createMesh(wEvent) {
+    var pos = convertLatLngToCortesian(wEvent);
 
     return (
       <mesh
@@ -44,11 +50,11 @@ export function Earth(props) {
         {...props}
         onPointerOver={(event) => {
           setHover(true);
-          console.log(event);
+          console.log(event.object.userData);
         }}
         onPointerOut={(event) => setHover(false)}
         position={[pos.x, pos.z, pos.y]}
-        userData={city}
+        userData={wEvent}
       >
         <sphereGeometry args={[0.01, 20, 20]} />
         <meshBasicMaterial color={hovered ? 'red' : 'orange'} />
@@ -56,21 +62,7 @@ export function Earth(props) {
     );
   }
 
-  //los angeles
-  let point1 = {
-    name: 'Los Angeles',
-    lat: 34.0522,
-    lng: -118.2437,
-  };
-
-  //chicago
-  let point2 = {
-    name: 'Chicago',
-    lat: 41.8781,
-    lng: -87.6298,
-  };
-
-  let cities = [point1, point2];
+  let worldEvents = historyArr;
 
   return (
     <>
@@ -100,7 +92,7 @@ export function Earth(props) {
       </mesh>
 
       {/* coordinates */}
-      {cities.map((c) => createMesh(c))}
+      {worldEvents.map((w) => createMesh(w))}
 
       {/* earth wrapper */}
       <mesh>

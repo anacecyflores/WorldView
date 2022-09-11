@@ -91,36 +91,54 @@ const SearchBooks = () => {
     <>
       <Jumbotron fluid className="text-light bg-dark">
         <Container>
-          <h1>Search for Global Historical Events</h1>
+          <h1 id="header">Welcome to WorldView!</h1>
+          <p className="text-center">Find the location of a country's historical events on the WorldView globe! Fill out the form below to begin.</p>
 
           <Form onSubmit={handleFormSubmit}>
+            <h5>Country</h5>
             <Form.Row>
               <Col xs={16} md={12}>
                 <Form.Control
                   name="searchInput"
-                  value={searchInput}
+                  // value={searchInput}
                   onChange={(e) => setSearchInput(e.target.value)}
                   type="text"
-                  size="lg"
+                  size="sm"
                   placeholder="ie: United Kingdom"
                 />
               </Col>
             </Form.Row>
+            <h5>Event</h5>
             <Form.Row>
               <Col xs={16} md={12}>
                 <Form.Control
                   name="searchInput"
-                  value={searchInput}
+                  // value={searchInput}
                   onChange={(e) => setSearchInput(e.target.value)}
                   type="text"
-                  size="lg"
+                  size="sm"
                   placeholder="ie: Queen Elizabeth's II Death"
                 />
+                <h5>Century</h5>
+                <Form.Control 
+                as="select"
+                size="sm">
+                  <option>Select a Century</option>
+                  <option value="1">1800's</option>
+                  <option value="2">1900's</option>
+                  <option value="3">2000's</option>
+                </Form.Control>
               </Col>
-              <Col xs={12} md={4}>
+              <Col xs={12} md={4} className="mt-2 text-center">
                 <Button as="input" type="button" value="Search 🌎" size="lg" />{" "}
               </Col>
             </Form.Row>
+            {/* <Form.Select aria-label="Default select example">
+              <option>Open this select menu</option>
+              <option value="1">One</option>
+              <option value="2">Two</option>
+              <option value="3">Three</option>
+            </Form.Select> */}
           </Form>
         </Container>
       </Jumbotron>
