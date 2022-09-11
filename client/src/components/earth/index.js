@@ -1,14 +1,16 @@
 import React, { useRef, useState, useEffect } from 'react';
 import { useLoader, useFrame } from '@react-three/fiber';
 import { TextureLoader } from 'three';
-import { OrbitControls, Stars } from '@react-three/drei';
+import { OrbitControls, Stars, Html } from '@react-three/drei';
 import * as THREE from 'three';
+
 import historyArr from './events';
 
 import EarthDayMap from '../../assets/textures/8k_earth_daymap.jpg';
 import EarthNormalMap from '../../assets/textures/8k_earth_normal_map.jpg';
 import EarthSpecularMap from '../../assets/textures/8k_earth_specular_map.jpg';
 import EarthCloudsMap from '../../assets/textures/8k_earth_clouds.jpg';
+
 // import EarthNightMap from '../../assets/textures/8k_earth_nightmap.jpg';
 
 export function Earth(props) {
@@ -50,14 +52,32 @@ export function Earth(props) {
         {...props}
         onPointerOver={(event) => {
           setHover(true);
-          console.log(event.object.userData);
+          // console.log(event.object.userData);
         }}
         onPointerOut={(event) => setHover(false)}
         position={[pos.x, pos.z, pos.y]}
         userData={wEvent}
       >
+        <Html
+          scaleFactor={7}
+          style={{
+            pointerEvents: 'none',
+            display: hovered ? 'block' : 'none',
+            color: '',
+            backgroundColor: '',
+          }}
+        >
+          <div className="content">{wEvent.header}</div>
+        </Html>
         <sphereGeometry args={[0.01, 20, 20]} />
         <meshBasicMaterial color={hovered ? 'red' : 'orange'} />
+        {/* <sprite
+          {...props}
+          scale={[0.1, 0.01, 0.1]}
+          position={[0.001, 0.1, 0.001]}
+        >
+          <spriteMaterial text="test" opacity={0.4} fillText="text" />
+        </sprite> */}
       </mesh>
     );
   }
