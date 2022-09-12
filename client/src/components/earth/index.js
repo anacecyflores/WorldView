@@ -2,9 +2,15 @@ import React, { useRef, useState, useEffect } from 'react';
 //eslint-disable-next-line
 import { useLoader, useFrame } from '@react-three/fiber';
 import { TextureLoader } from 'three';
-import { OrbitControls, Stars, Html } from '@react-three/drei';
+import {
+  OrbitControls,
+  Stars,
+  Html,
+  Bounds,
+  useBounds,
+} from '@react-three/drei';
 import * as THREE from 'three';
-import Card from 'react-bootstrap/Card'
+import Card from 'react-bootstrap/Card';
 
 import historyArr from './events';
 
@@ -18,15 +24,6 @@ export function Earth(props) {
     TextureLoader,
     [EarthDayMap, EarthNormalMap, EarthSpecularMap, EarthCloudsMap]
   );
-
-  // const coordRef = useRef();
-  // const [hovered, setHover] = useState(false);
-  // //eslint-disable-next-line
-  // const [active, setActive] = useState(false);
-
-  // useEffect(() => {
-  //   document.body.style.cursor = hovered ? 'pointer' : 'auto';
-  // }, [hovered]);
 
   //north/east are positive and west/south are negative
   function convertLatLngToCortesian(p) {
@@ -55,23 +52,19 @@ export function Earth(props) {
     //eslint-disable-next-line
     const [active, setActive] = useState(false);
 
-    // useEffect(() => {
-    //   document.body.style.cursor = hovered ? 'pointer' : 'auto';
-    // }, [hovered]);
+    //eslint-disable-next-line
+    useEffect(() => {
+      document.body.style.cursor = hovered ? 'pointer' : 'auto';
+    }, [hovered]);
 
     return (
       <mesh
-        // preventDefault={true}
         key={wEvent.header}
         ref={coordRef}
         {...props}
         onPointerOver={(e) => {
           e.stopPropagation();
-          // console.log(e);
-          // console.log(e.intersections[0].object.userData.header);
           setHover(true);
-
-          // console.log(e.object.userData);
         }}
         onPointerOut={(e) => {
           e.stopPropagation();
@@ -87,26 +80,36 @@ export function Earth(props) {
             display: hovered ? 'block' : 'none',
             color: 'black',
             backgroundColor: 'black',
-            width: '18rem'
+            width: '18rem',
           }}
         >
           <div className="card">
             <div className="card-body">
               <div className="card-title">{wEvent.header}</div>
-              <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <p className="card-text">
+                Some quick example text to build on the card title and make up
+                the bulk of the card's content.
+              </p>
             </div>
           </div>
         </Html>
         <sphereGeometry args={[0.01, 20, 20]} />
         <meshBasicMaterial color={hovered ? 'red' : 'orange'} />
-        {/* <sprite
-          {...props}
-          scale={[0.1, 0.01, 0.1]}
-          position={[0.001, 0.1, 0.001]}
-        >
-          <spriteMaterial text="test" opacity={0.4} fillText="text" />
-        </sprite> */}
       </mesh>
+    );
+  }
+
+  function SelectToZoom({ children }) {
+    const api = useBounds();
+    return (
+      <group
+        onClick={(e) => (
+          e.stopPropagation(), e.delta <= 2 && api.refresh(e.object).fit()
+        )}
+        onPointerMissed={(e) => e.button === 0 && api.refresh().fit()}
+      >
+        {children}
+      </group>
     );
   }
 
@@ -139,8 +142,12 @@ export function Earth(props) {
         />
       </mesh>
 
+      {/* <Bounds fit clip observe margin={6.5}>
+        <SelectToZoom> */}
       {/* coordinates */}
       {worldEvents.map((w) => createMesh(w))}
+      {/* </SelectToZoom>
+      </Bounds> */}
 
       {/* earth wrapper */}
       <mesh>
