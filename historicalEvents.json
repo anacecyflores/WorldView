@@ -4,7 +4,7 @@
     {
     "id" : [1],
     "date": "1803",
-    "location": "USA",
+    "location": "United States of America (Lousiana area)",
     "latitude": "-91 03′14.3",
     "longitude": "34 38′44.5",
     "header": "Lousiana Purchase",
@@ -14,7 +14,7 @@
      {
     "id" : [2],
     "date": "1804",
-    "location": "HAITI",
+    "location": "Haiti",
     "latitude": "-72.2852",
     "longitude": "18.9712",
     "header": "Haiti declares independence from France",
@@ -24,7 +24,7 @@
      {
     "id" : [3],
     "date": "1869",
-    "location": "RUSSIA",
+    "location": "Russia",
     "latitude": "61.5240",
     "longitude": "105.3188",
     "header": "Mendeleev's periodic table of elements.",
@@ -34,7 +34,7 @@
      {
     "id" : [4],
     "date": "1886",
-    "location": "CHICAGO,USA",
+    "location": "Chicago,IL",
     "latitude": "41.8781",
     "longitude": "-87.6298",
     "header": "Bombing at Haymarket Square",
@@ -44,7 +44,7 @@
      {
     "id" : [5],
     "date": "1894",
-    "location": "NEW ZEALAND",
+    "location": "New Zealand",
     "latitude": "-40.9006",
     "longitude": "174.8860",
     "header": "New Zealand becomes first country in the world to grant women the vote.",
@@ -54,7 +54,7 @@
      {
     "id" : [6],
     "date": "1899",
-    "location": " SOUTH AFRICA",
+    "location": " South Africa",
     "latitude": "-30.5595",
     "longitude": "22.9375",
     "header": "Boer War (or South African War)",
@@ -64,7 +64,7 @@
      {
     "id" : [7], 
     "date": "1819",
-    "location": "SOUTH AMERICA",
+    "location": "South America",
     "latitude": "-8.7832",
     "longitude": "-55.4915",
     "header": "Simón Bolívar liberates New Granada (now Colombia",
@@ -74,7 +74,7 @@
      {
     "id" : [8],
     "date": "1824",
-    "location": "MEXICO",
+    "location": "Mexico",
     "latitude": "23.6345",
     "longitude": "-102.5528",
     "header": "Mexico becomes a republic",
@@ -84,7 +84,7 @@
      {
     "id" : [9],
     "date": "1824",
-    "location": "FRANCE",
+    "location": "France",
     "latitude": "46.2276",
     "longitude": "2.2137",
     "header": "Joseph-Nicéphore Niepce takes the world's first photograph.",
@@ -94,7 +94,7 @@
      {
     "id" : [10],    
     "date": "1876",
-    "location": "BOSTON,USA",
+    "location": "Boston,MA,USA",
     "latitude": "42.3601",
     "longitude": "-71.0589",
     "header": "Alexander Graham Bell patents the telephone.",
@@ -114,7 +114,7 @@
      {
     "id" : [11],    
     "date": "1914",
-    "location": "SARAJEVO, BOSNIA",
+    "location": "Sarajevo, Bosnia",
     "latitude": "43.8563",
     "longitude": "18.4131",
     "header": "World War I Starts",
@@ -124,7 +124,7 @@
      {
     "id" : [12],    
     "date": "1914",
-    "location": "PANAMA",
+    "location": "Panama",
     "latitude": "9.080000",
     "longitude": "-79.680000",
     "header": "Panama Canal officially opened.",
@@ -134,7 +134,7 @@
      {
     "id" : [13],    
     "date": "1920",
-    "location": "GENEVA, SWITZERLAND",
+    "location": "Geneva, Switzerland",
     "latitude": "46.2044",
     "longitude": "6.1432",
     "header": "League of Nations holds first meeting at Geneva, Switzerland.",
@@ -144,7 +144,7 @@
      {
     "id" : [14],    
     "date": "1920",
-    "location": "USA",
+    "location": "United States of America",
     "latitude": "38.8977",
     "longitude": "-77.0365",
     "header": "WOMEN WIN RIGHT TO VOTE",
@@ -154,7 +154,7 @@
      {
     "id" : [15],    
     "date": "1923",
-    "location": "MUNICH, GERMANY",
+    "location": "Munich, Germany",
     "latitude": "48.1351",
     "longitude": "11.5820",
     "header": "Hitler writes Mein Kampf",
@@ -163,7 +163,7 @@
     }, {
     "id" : [16],    
     "date": "1931",
-    "location": "SPAIN",
+    "location": "Spain",
     "latitude": "40.4168",
     "longitude": "-3.7038",
     "header": "Spain becomes a republic with overthrow of King Alfonso XIII",
@@ -173,7 +173,7 @@
      {
     "id" : [17],    
     "date": "1941",
-    "location": "PEARL HARBOR, HAWAII",
+    "location": "Pearl Harbor, Hawaii,USA",
     "latitude": "21.3665",
     "longitude": "-157.9368",
     "header": "Japanese surprise attack on U.S. fleet at Pearl Harbor brings U.S. into World War II",
@@ -183,7 +183,7 @@
      {
     "id" : [18],    
     "date": "1941",
-    "location": "OAKRIDGE, TENESSE, USA",
+    "location": "Oakridge,TN, USA",
     "latitude": "36.3918",
     "longitude": "- 87.4616",
     "header": " Manhattan Project (atomic bomb research) begins.",
@@ -193,9 +193,9 @@
      {
     "id" : [19],    
     "date": "1947",
-    "location": "INDIA",
-    "latitude": "",
-    "longitude": "",
+    "location": "India",
+    "latitude": "35.008371",
+    "longitude": "77.008805",
     "header": "India and Pakistan gain independence from Britain",
     "summary": "The Indian Independence Bill, which carves the independent nations of India and Pakistan out of the former Mogul Empire, comes into force at the stroke of midnight on August 15, 1947. The long-awaited agreement ended 200 years of British rule and was hailed by Indian independence leader Mohandas Gandhi as the “noblest act of the British nation.” However, religious strife between Hindus and Muslims, which had delayed Britain’s granting of Indian independence after World War II, soon marred Gandhi’s exhilaration. In the northern province of Punjab, which was sharply divided between Hindu-dominated India and Muslim-dominated Pakistan, hundreds of people were killed in the first few days after independence.",
     "link": "https://www.history.com/this-day-in-history/india-and-pakistan-win-independence"
@@ -203,7 +203,7 @@
      {
     "id" : [20],    
     "date": "1949",
-    "location": "SOUTH AFRICA",
+    "location": "South Africa",
     "latitude": "-33.9249",
     "longitude": "18.4241",
     "header": "South Africa institutionalizes apartheid.",
@@ -213,7 +213,7 @@
      {
     "id" : [21],    
     "date": "2000",
-    "location": "KOREA",
+    "location": "Korea",
     "latitude": "35.9078",
     "longitude": "127.7669",
     "header": "Presidents of North and South Korea sign peace accord, ending half-century of antagonism",
@@ -223,7 +223,7 @@
      {
     "id" : [22],    
     "date": "2000",
-    "location": "UGANDA",
+    "location": "Uganda",
     "latitude": "1.3733",
     "longitude": "32.2903",
     "header": "Mass murder or suicide of hundreds in Ugandan doomsday cult",
@@ -233,7 +233,7 @@
      {
     "id" : [23],    
     "date": "2001",
-    "location": "NEW YORK CITY, NY USA",
+    "location": "New York City, NY USA",
     "latitude": "40.7128",
     "longitude": "-74.0060",
     "header": "9/11, the terrorist attacks on Sept. 11, 2001, in the United States",
@@ -243,7 +243,7 @@
      {
     "id" : [24],    
     "date": "2008",
-    "location": "WASHINGTON D.C, USA",
+    "location": "Washington D.C, USA",
     "latitude": "38.9072",
     "longitude": "-77.0369",
     "header": "Obama becomes first black President",
@@ -253,7 +253,7 @@
      {
     "id" : [25],    
     "date": "2007",
-    "location": "SAN FRANCISCO,CALIFORNIA,USA",
+    "location": "San Francisco,CA,USA",
     "latitude": "37.7749",
     "longitude": "-122.4194",
     "header": "Macworld Steve Jobs unveiled the CEO of Apple unveiled the iPhone. The iPhone would go on to change the way we communicate.",
@@ -262,7 +262,7 @@
     }, {
     "id" : [26],    
     "date": "2011",
-    "location": "PAKISTAN",
+    "location": "Pakistan",
     "latitude": "30.3753",
     "longitude": "69.3451",
     "header": "Bin Ladin Killed by US Forces",
@@ -272,7 +272,7 @@
      {
     "id" : [27],    
     "date": "2020",
-    "location": "CAPE KENNEDY, FLORIDA, USA",
+    "location": "Cape Kennedy,FL, USA",
     "latitude": "28.3922",
     "longitude": "-80.6077",
     "header": "SPACE-X LAUNCHES MANNED SPACECRAFT",
@@ -282,7 +282,7 @@
      {
     "id" : [28],    
     "date": "1876",
-    "location": "MONTENEGRO",
+    "location": "Montenegro",
     "latitude": "42.7087",
     "longitude": "19.3744",
     "header": "Independence of Montenegro",
@@ -292,7 +292,7 @@
      {
     "id" : [29],    
     "date": "2013",
-    "location": "VATICAN CITY",
+    "location": "Vatican City",
     "latitude": "41.9029",
     "longitude": "12.4534",
     "header": "Pope Benedict XVI resigns, the first Pope to do since 1415, and Pope Francis is elected, becoming the first Pope from Latin America.",
@@ -302,7 +302,7 @@
      {
     "id" : [30],    
     "date": "2015",
-    "location": "PARIS, FRANCE",
+    "location": "Paris, France",
     "latitude": "48.85925",
     "longitude": "2.37025°E",
     "header": "Paris terrorrits attacks",
