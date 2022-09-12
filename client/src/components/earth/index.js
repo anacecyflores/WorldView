@@ -1,4 +1,5 @@
 import React, { useRef, useState, useEffect } from 'react';
+//eslint-disable-next-line
 import { useLoader, useFrame } from '@react-three/fiber';
 import { TextureLoader } from 'three';
 import { OrbitControls, Stars, Html } from '@react-three/drei';
@@ -11,21 +12,20 @@ import EarthNormalMap from '../../assets/textures/8k_earth_normal_map.jpg';
 import EarthSpecularMap from '../../assets/textures/8k_earth_specular_map.jpg';
 import EarthCloudsMap from '../../assets/textures/8k_earth_clouds.jpg';
 
-// import EarthNightMap from '../../assets/textures/8k_earth_nightmap.jpg';
-
 export function Earth(props) {
   const [colorMap, normalMap, specularMap, cloudsMap] = useLoader(
     TextureLoader,
     [EarthDayMap, EarthNormalMap, EarthSpecularMap, EarthCloudsMap]
   );
 
-  const coordRef = useRef();
-  const [hovered, setHover] = useState(false);
-  const [active, setActive] = useState(false);
+  // const coordRef = useRef();
+  // const [hovered, setHover] = useState(false);
+  // //eslint-disable-next-line
+  // const [active, setActive] = useState(false);
 
-  useEffect(() => {
-    document.body.style.cursor = hovered ? 'pointer' : 'auto';
-  }, [hovered]);
+  // useEffect(() => {
+  //   document.body.style.cursor = hovered ? 'pointer' : 'auto';
+  // }, [hovered]);
 
   //north/east are positive and west/south are negative
   function convertLatLngToCortesian(p) {
@@ -45,16 +45,37 @@ export function Earth(props) {
 
   function createMesh(wEvent) {
     var pos = convertLatLngToCortesian(wEvent);
+    // console.log(wEvent.location);
+
+    //eslint-disable-next-line
+    const coordRef = useRef();
+    //eslint-disable-next-line
+    const [hovered, setHover] = useState(false);
+    //eslint-disable-next-line
+    const [active, setActive] = useState(false);
+
+    // useEffect(() => {
+    //   document.body.style.cursor = hovered ? 'pointer' : 'auto';
+    // }, [hovered]);
 
     return (
       <mesh
+        // preventDefault={true}
+        key={wEvent.header}
         ref={coordRef}
         {...props}
-        onPointerOver={(event) => {
+        onPointerOver={(e) => {
+          e.stopPropagation();
+          // console.log(e);
+          // console.log(e.intersections[0].object.userData.header);
           setHover(true);
-          // console.log(event.object.userData);
+
+          // console.log(e.object.userData);
         }}
-        onPointerOut={(event) => setHover(false)}
+        onPointerOut={(e) => {
+          e.stopPropagation();
+          setHover(false);
+        }}
         position={[pos.x, pos.z, pos.y]}
         userData={wEvent}
       >
@@ -63,8 +84,8 @@ export function Earth(props) {
           style={{
             pointerEvents: 'none',
             display: hovered ? 'block' : 'none',
-            color: '',
-            backgroundColor: '',
+            color: 'white',
+            backgroundColor: 'black',
           }}
         >
           <div className="content">{wEvent.header}</div>
