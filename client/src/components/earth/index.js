@@ -4,6 +4,7 @@ import { useLoader, useFrame } from '@react-three/fiber';
 import { TextureLoader } from 'three';
 import { OrbitControls, Stars, Html } from '@react-three/drei';
 import * as THREE from 'three';
+import Card from 'react-bootstrap/Card'
 
 import historyArr from './events';
 
@@ -80,15 +81,21 @@ export function Earth(props) {
         userData={wEvent}
       >
         <Html
-          scaleFactor={7}
+          scaleFactor={6}
           style={{
             pointerEvents: 'none',
             display: hovered ? 'block' : 'none',
-            color: 'white',
+            color: 'black',
             backgroundColor: 'black',
+            width: '18rem'
           }}
         >
-          <div className="content">{wEvent.header}</div>
+          <div className="card">
+            <div className="card-body">
+              <div className="card-title">{wEvent.header}</div>
+              <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            </div>
+          </div>
         </Html>
         <sphereGeometry args={[0.01, 20, 20]} />
         <meshBasicMaterial color={hovered ? 'red' : 'orange'} />

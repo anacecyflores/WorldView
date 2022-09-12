@@ -99,9 +99,9 @@ const SearchBooks = () => {
             <Form.Row>
               <Col xs={16} md={12}>
                 <Form.Control
-                  name="searchInput"
+                  name="countrySearchInput"
                   // value={searchInput}
-                  onChange={(e) => setSearchInput(e.target.value)}
+                  // onChange={(e) => setSearchInput(e.target.value)}
                   type="text"
                   size="sm"
                   placeholder="ie: United Kingdom"
@@ -112,9 +112,9 @@ const SearchBooks = () => {
             <Form.Row>
               <Col xs={16} md={12}>
                 <Form.Control
-                  name="searchInput"
+                  name="eventSearchInput"
                   // value={searchInput}
-                  onChange={(e) => setSearchInput(e.target.value)}
+                  // onChange={(e) => setSearchInput(e.target.value)}
                   type="text"
                   size="sm"
                   placeholder="ie: Queen Elizabeth's II Death"
