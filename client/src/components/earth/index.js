@@ -95,11 +95,11 @@ export function Earth(props) {
               <p className="card-text font-weight-bold">
                 <strong>{wEvent.location}</strong> <br></br> {wEvent.date}
               </p>
-              <a className=''href={wEvent.link}>
+              <button type="button" className="btn btn-success mb-2" href={wEvent.link}>
                 Learn More!
-              </a>
+              </button>
               <br></br>
-              <button>Save Moment</button>
+              <button type="button" className="btn btn-primary">Save Moment</button>
             </div>
           </div>
         </Html>

@@ -92,7 +92,7 @@ const SearchBooks = () => {
       <Jumbotron fluid className="text-light bg-dark">
         <Container>
           <h1 id="header">Welcome to WorldView!</h1>
-          <p className="text-center">Find the location of a country's historical events on the WorldView globe! Fill out the form below to begin.</p>
+          <p className="text-center">Find the location of a country's historical moments on the WorldView globe! Fill out the form below to begin.</p>
 
           <Form onSubmit={handleFormSubmit}>
             <h5>Country</h5>
@@ -108,7 +108,7 @@ const SearchBooks = () => {
                 />
               </Col>
             </Form.Row>
-            <h5>Event</h5>
+            <h5>Moment</h5>
             <Form.Row>
               <Col xs={16} md={12}>
                 <Form.Control
