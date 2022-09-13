@@ -12,7 +12,9 @@ import {
 import * as THREE from 'three';
 import Card from 'react-bootstrap/Card';
 
-import historyArr from './events';
+import history18 from './era18';
+import history19 from './era19';
+import history20 from './era20';
 
 import EarthDayMap from '../../assets/textures/8k_earth_daymap.jpg';
 import EarthNormalMap from '../../assets/textures/8k_earth_normal_map.jpg';
@@ -25,7 +27,11 @@ export function Earth(props) {
     [EarthDayMap, EarthNormalMap, EarthSpecularMap, EarthCloudsMap]
   );
 
-  //north/east are positive and west/south are negative
+  let worldEvents18 = history18;
+  let worldEvents19 = history19;
+  let worldEvents20 = history20;
+
+  //formula to convert coordinates to display accurately on a sphere
   function convertLatLngToCortesian(p) {
     let phi = (90 - p.lat) * (Math.PI / 180);
     let theta = (p.lng + 180) * (Math.PI / 180);
@@ -43,7 +49,6 @@ export function Earth(props) {
 
   function createMesh(wEvent) {
     var pos = convertLatLngToCortesian(wEvent);
-    // console.log(wEvent.location);
 
     //eslint-disable-next-line
     const coordRef = useRef();
@@ -87,18 +92,20 @@ export function Earth(props) {
             <div className="card-body">
               <div className="card-title">{wEvent.header}</div>
               <p className="card-text">
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
+                {/* Some quick example text to build on the card title and make up
+                the bulk of the card's content. */}
+                {wEvent.location} <br></br> {wEvent.date}
               </p>
             </div>
           </div>
         </Html>
         <sphereGeometry args={[0.01, 20, 20]} />
-        <meshBasicMaterial color={hovered ? 'red' : 'orange'} />
+        <meshBasicMaterial color={hovered ? 'green' : 'orange'} />
       </mesh>
     );
   }
 
+  //click to zoom function
   function SelectToZoom({ children }) {
     const api = useBounds();
     return (
@@ -112,8 +119,6 @@ export function Earth(props) {
       </group>
     );
   }
-
-  let worldEvents = historyArr;
 
   return (
     <>
@@ -142,12 +147,12 @@ export function Earth(props) {
         />
       </mesh>
 
-      {/* <Bounds fit clip observe margin={6.5}>
-        <SelectToZoom> */}
-      {/* coordinates */}
-      {worldEvents.map((w) => createMesh(w))}
-      {/* </SelectToZoom>
-      </Bounds> */}
+      <Bounds fit clip observe margin={6.5}>
+        <SelectToZoom>
+          {/* coordinates */}
+          {worldEvents20.map((w) => createMesh(w))}
+        </SelectToZoom>
+      </Bounds>
 
       {/* earth wrapper */}
       <mesh>

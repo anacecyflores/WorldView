@@ -13,13 +13,14 @@ import './index.css';
 import styled from 'styled-components';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Canvas } from '@react-three/fiber';
+import { Html, useGLTF, useProgress } from '@react-three/drei';
 import { Suspense } from 'react';
 import { Earth } from './components/earth';
 
 import SearchBooks from './pages/SearchBooks';
 import SavedBooks from './pages/SavedBooks';
 import Navbar from './components/Navbar';
-import topSection from './components/topSection/index.js'
+import topSection from './components/topSection/index.js';
 import AppNavbar from './components/Navbar';
 
 const CanvasContainer = styled.div`
@@ -51,6 +52,12 @@ const client = new ApolloClient({
   cache: new InMemoryCache(),
 });
 
+//set up progress for loading fallback
+function Loader() {
+  const { progress } = useProgress();
+  return <Html center>Loading...{progress} </Html>;
+}
+
 function App() {
   return (
     <CanvasContainer>
@@ -70,7 +77,9 @@ function App() {
         </Router>
       </ApolloProvider>
       <Canvas>
-        <Earth />
+        <Suspense fallback={<Loader />}>
+          <Earth />
+        </Suspense>
       </Canvas>
     </CanvasContainer>
   );
