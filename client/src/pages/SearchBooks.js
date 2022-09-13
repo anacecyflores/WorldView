@@ -130,15 +130,9 @@ const SearchBooks = () => {
                 </Form.Control>
               </Col>
               <Col xs={12} md={4} className="mt-2 text-center">
-                <Button as="input" type="button" value="Search 🌎" size="lg" />{" "}
+                <Button as="input" type="button" className='text-center' value="Search 🌎" size="med" />{" "}
               </Col>
             </Form.Row>
-            {/* <Form.Select aria-label="Default select example">
-              <option>Open this select menu</option>
-              <option value="1">One</option>
-              <option value="2">Two</option>
-              <option value="3">Three</option>
-            </Form.Select> */}
           </Form>
         </Container>
       </Jumbotron>

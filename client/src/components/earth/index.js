@@ -10,7 +10,6 @@ import {
   useBounds,
 } from '@react-three/drei';
 import * as THREE from 'three';
-import Card from 'react-bootstrap/Card';
 
 import history18 from './era18';
 import history19 from './era19';
@@ -20,7 +19,6 @@ import EarthDayMap from '../../assets/textures/8k_earth_daymap.jpg';
 import EarthNormalMap from '../../assets/textures/8k_earth_normal_map.jpg';
 import EarthSpecularMap from '../../assets/textures/8k_earth_specular_map.jpg';
 import EarthCloudsMap from '../../assets/textures/8k_earth_clouds.jpg';
-import { Button } from 'antd';
 
 export function Earth(props) {
   const [colorMap, normalMap, specularMap, cloudsMap] = useLoader(
@@ -86,7 +84,7 @@ export function Earth(props) {
             display: hovered ? 'block' : 'none',
             color: 'black',
             backgroundColor: 'black',
-            width: '20rem',
+            width: '18rem',
             
           }}
         >

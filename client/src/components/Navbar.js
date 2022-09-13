@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { Navbar, Nav, Container, Modal, Tab } from "react-bootstrap";
+import { Navbar, Nav, Container, Modal, Tab, } from "react-bootstrap";
 import SignUpForm from "./SignupForm";
 import LoginForm from "./LoginForm";
 import Auth from "../utils/auth";
@@ -89,7 +89,7 @@ const AppNavbar = () => {
         </Modal.Header>
 
         <Modal.Body>
-          <p>WorldView 🌎 is a React and GraphQL application, using react-globe, to function as an eductional resource for students to learn about historical moments around the world. Hover over any coordinate on the interactive globe to learn about a historical moment at that location, or fill in the prompt!</p>
+          <p>WorldView 🌎 is a React and GraphQL application, using react-globe, to function as an eductional resource for students to learn about historical moments around the world. Hover over any coordinate on the interactive globe to learn about a historical moment at that location, or fill in the prompt! Be sure to create an account and save your favorite moments in history.</p>
           <br></br>
           <p><strong>Creators </strong>Ana Cecy Flores, Cristian Vargas, Mason Benson</p>
         </Modal.Body>
