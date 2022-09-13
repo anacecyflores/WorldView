@@ -95,8 +95,8 @@ export function Earth(props) {
               <p className="card-text font-weight-bold">
                 <strong>{wEvent.location}</strong> <br></br> {wEvent.date}
               </p>
-              <button type="button" className="btn btn-success mb-2" href={wEvent.link}>
-                Learn More!
+              <button className="btn btn-success mb-2" href={wEvent.link}>
+                Learn More
               </button>
               <br></br>
               <button type="button" className="btn btn-primary">Save Moment</button>
@@ -124,6 +124,14 @@ export function Earth(props) {
     );
   }
 
+  const cloudRef = useRef();
+
+  useFrame(({ clock }) => {
+    const elapsedTime = clock.getElapsedTime();
+
+    cloudRef.current.rotation.y = elapsedTime / 40;
+  });
+
   return (
     <>
       {/* light from all directions */}
@@ -140,7 +148,7 @@ export function Earth(props) {
       />
 
       {/* cloud wrapper */}
-      <mesh>
+      <mesh ref={cloudRef}>
         <sphereGeometry args={[1.005, 32, 32]} />
         <meshPhongMaterial
           map={cloudsMap}
