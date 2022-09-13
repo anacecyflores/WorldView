@@ -2,14 +2,14 @@ const express = require("express");
 const { ApolloServer } = require("apollo-server-express");
 const path = require("path");
 const { authMiddleware } = require("./utils/auth");
-const mongoose = require("mongoose");
+// const mongoose = require("mongoose");
 
-require("dotenv").config();
+// require("dotenv").config();
 
-mongoose
-  .connect(process.env.MONGO_URI, { useNewUrlParser: true })
-  .then(() => console.log("DB Connected!"))
-  .catch((err) => console.error(err));
+// mongoose
+//   .connect(process.env.MONGO_URI, { useNewUrlParser: true })
+//   .then(() => console.log("DB Connected!"))
+//   .catch((err) => console.error(err));
 
 const { typeDefs, resolvers } = require("./schemas");
 const db = require("./config/connection");
