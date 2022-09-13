@@ -9,6 +9,7 @@ const AppNavbar = () => {
 
   // set modal display state
   const [showModal, setShowModal] = useState(false);
+  const [showAboutModal, setShowAboutModal] = useState(false)
 
   return (
     <>
@@ -20,7 +21,7 @@ const AppNavbar = () => {
           <Navbar.Toggle aria-controls="navbar" />
           <Navbar.Collapse id="navbar">
             <Nav className="ml-auto">
-              <Nav.Link as={Link} to="/about">
+              <Nav.Link onClick={() => setShowAboutModal(true)}>
                 About
               </Nav.Link>
           
@@ -73,6 +74,25 @@ const AppNavbar = () => {
             </Tab.Content>
           </Modal.Body>
         </Tab.Container>
+      </Modal>
+
+      {/* set modal data up */}
+      <Modal
+        size="lg"
+        show={showAboutModal}
+        onHide={() => setShowAboutModal(false)}
+        aria-labelledby="about-modal"
+      >
+        {/* tab container to do either signup or login component */}
+        <Modal.Header closeButton>
+          <Modal.Title>About</Modal.Title>
+        </Modal.Header>
+
+        <Modal.Body>
+          <p>WorldView 🌎 is a React and GraphQL application, using react-globe, to function as an eductional resource for students to learn about historical moments around the world. Hover over any coordinate on the interactive globe to learn about a historical moment at that location, or fill in the prompt!</p>
+          <br></br>
+          <p><strong>Creators </strong>Ana Cecy Flores, Cristian Vargas, Mason Benson</p>
+        </Modal.Body>
       </Modal>
     </>
   );

@@ -86,7 +86,8 @@ export function Earth(props) {
             display: hovered ? 'block' : 'none',
             color: 'black',
             backgroundColor: 'black',
-            width: '18rem',
+            width: '20rem',
+            
           }}
         >
           <div className="card">
