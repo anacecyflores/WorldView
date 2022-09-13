@@ -18,6 +18,7 @@ import { Earth } from './components/earth';
 
 import SearchBooks from './pages/SearchBooks';
 import SavedBooks from './pages/SavedBooks';
+import About from './pages/about'
 import Navbar from './components/Navbar';
 import topSection from './components/topSection/index.js'
 import AppNavbar from './components/Navbar';
@@ -60,7 +61,8 @@ function App() {
             <AppNavbar />
             <Routes>
               <Route path="/" element={<SearchBooks />} />
-              <Route path="/saved" element={<SavedBooks />} />
+              <Route path="/saved" element={<SavedBooks />} /> 
+              <Route path="/about" element={<About />} />
               <Route
                 path="*"
                 element={<h1 className="display-2">Wrong page!</h1>}
