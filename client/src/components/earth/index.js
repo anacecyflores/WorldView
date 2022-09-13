@@ -20,6 +20,7 @@ import EarthDayMap from '../../assets/textures/8k_earth_daymap.jpg';
 import EarthNormalMap from '../../assets/textures/8k_earth_normal_map.jpg';
 import EarthSpecularMap from '../../assets/textures/8k_earth_specular_map.jpg';
 import EarthCloudsMap from '../../assets/textures/8k_earth_clouds.jpg';
+import { Button } from 'antd';
 
 export function Earth(props) {
   const [colorMap, normalMap, specularMap, cloudsMap] = useLoader(
@@ -90,12 +91,15 @@ export function Earth(props) {
         >
           <div className="card">
             <div className="card-body">
-              <div className="card-title">{wEvent.header}</div>
-              <p className="card-text">
-                {/* Some quick example text to build on the card title and make up
-                the bulk of the card's content. */}
-                {wEvent.location} <br></br> {wEvent.date}
+              <div className="text-bold card-title">{wEvent.header}</div>
+              <p className="card-text font-weight-bold">
+                <strong>{wEvent.location}</strong> <br></br> {wEvent.date}
               </p>
+              <a className=''href={wEvent.link}>
+                Learn More!
+              </a>
+              <br></br>
+              <button>Save Moment</button>
             </div>
           </div>
         </Html>
