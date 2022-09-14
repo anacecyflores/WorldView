@@ -108,8 +108,8 @@ const AppNavbar = () => {
         <Modal.Header closeButton>
           <Modal.Title>Saved Moments</Modal.Title>
         </Modal.Header>
-
         <Modal.Body>
+         <p>No Saved Moments!</p> 
         </Modal.Body>
       </Modal>
 
