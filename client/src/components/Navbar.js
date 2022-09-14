@@ -1,17 +1,15 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { Navbar, Nav, Container, Modal, Tab, } from "react-bootstrap";
+import { Navbar, Nav, Container, Modal, Tab } from "react-bootstrap";
 import SignUpForm from "./SignupForm";
 import LoginForm from "./LoginForm";
 import Auth from "../utils/auth";
 
 const AppNavbar = () => {
-
   // set modal display state
   const [showModal, setShowModal] = useState(false);
-  const [showAboutModal, setShowAboutModal] = useState(false)
-  const [showSavedModal, setShowSavedModal] = useState(false)
-
+  const [showAboutModal, setShowAboutModal] = useState(false);
+  const [showSavedModal, setShowSavedModal] = useState(false);
 
   return (
     <>
@@ -23,14 +21,14 @@ const AppNavbar = () => {
           <Navbar.Toggle aria-controls="navbar" />
           <Navbar.Collapse id="navbar">
             <Nav className="ml-auto">
-              <Nav.Link onClick={() => setShowAboutModal(true)}>
-                About
-              </Nav.Link>
-          
-              {/* if user is logged in show saved books and logout */}
+              <Nav.Link onClick={() => setShowAboutModal(true)}>About</Nav.Link>
+
+              {/* if user is logged in show saved events and logout */}
               {Auth.loggedIn() ? (
                 <>
-                  <Nav.Link onClick={() => setShowSavedModal(true)}> {/* or as={Link} to="/saved" so it goes to another page, SavedBooks*/}
+                  <Nav.Link onClick={() => setShowSavedModal(true)}>
+                    {" "}
+                    {/* or as={Link} to="/saved" so it goes to another page, SavedMoments*/}
                     Saved Moments
                   </Nav.Link>
                   <Nav.Link onClick={Auth.logout}>Logout</Nav.Link>
@@ -91,9 +89,19 @@ const AppNavbar = () => {
         </Modal.Header>
 
         <Modal.Body>
-          <p>WorldView 🌎 is a React and GraphQL application, using react-globe, to function as an eductional resource for students to learn about historical moments around the world. Hover over any coordinate on the interactive globe to learn about a historical moment at that location, or fill in the prompt! Be sure to create an account and save your favorite moments in history.</p>
+          <p>
+            WorldView 🌎 is a React and GraphQL application, using react-globe,
+            to function as an eductional resource for students to learn about
+            historical moments around the world. Hover over any coordinate on
+            the interactive globe to learn about a historical moment at that
+            location, or fill in the prompt! Be sure to create an account and
+            save your favorite moments in history.
+          </p>
           <br></br>
-          <p><strong>Creators </strong>Ana Cecy Flores, Cristian Vargas, Mason Benson</p>
+          <p>
+            <strong>Creators </strong>Ana Cecy Flores, Cristian Vargas, Mason
+            Benson
+          </p>
         </Modal.Body>
       </Modal>
 
@@ -109,10 +117,9 @@ const AppNavbar = () => {
           <Modal.Title>Saved Moments</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-         <p>No Saved Moments!</p> 
+          <p>No Saved Moments!</p>
         </Modal.Body>
       </Modal>
-
     </>
   );
 };

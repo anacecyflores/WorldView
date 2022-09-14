@@ -35,7 +35,7 @@ export const SAVE_MOMENT = gql`
         location
         header
         summary
-        lattitude
+        latitude
         longitude
         link
       }
@@ -54,7 +54,7 @@ export const REMOVE_MOMENT = gql`
         location
         header
         summary
-        lattitude
+        latitude
         longitude
         link
       }

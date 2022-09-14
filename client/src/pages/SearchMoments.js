@@ -7,8 +7,10 @@ import Form from "react-bootstrap/Form";
 import Card from "react-bootstrap/Card";
 import CardColumns from "react-bootstrap/CardColumns";
 import Container from "react-bootstrap/Container";
+import { QUERY_ME } from "../utils/queries.js";
+import { useQuery } from "@apollo/client";
 
-import { useMutation } from "@apollo/client";
+import { ApolloClient, useMutation } from "@apollo/client";
 import { SAVE_MOMENT } from "../utils/mutations";
 import { saveMomentIds, getSavedMomentIds } from "../utils/localStorage";
 
@@ -32,7 +34,7 @@ const SearchMoments = () => {
   });
 
   // create method to search for books and set state on form submit
-  const handleFormSubmit = async (event) => {
+  const handleFormSubmit = (event) => {
     event.preventDefault();
 
     if (!searchInput) {
@@ -40,22 +42,19 @@ const SearchMoments = () => {
     }
 
     try {
-      const response = await fetch(
-        `https://www.googleapis.com/books/v1/volumes?q=${searchInput}`
-      );
+      //eslint-disable-next-line
+      const response = useQuery(QUERY_ME).data;
 
       if (!response.ok) {
         throw new Error("something went wrong!");
       }
 
-      const { items } = await response.json();
+      const { items } = response.json();
 
       const momentData = items.map((moment) => ({
         momentId: moment.id,
-        authors: moment.volumeInfo.authors || ["No author to display"],
-        title: moment.volumeInfo.title,
-        description: moment.volumeInfo.description,
-        image: moment.volumeInfo.imageLinks?.thumbnail || "",
+        header: moment.header,
+        summary: moment.summary,
       }));
 
       setSearchedMoments(momentData);

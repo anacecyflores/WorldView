@@ -11,7 +11,7 @@ export const QUERY_ME = gql`
         location
         header
         summary
-        lattitude
+        latitude
         longitude
         link
       }
