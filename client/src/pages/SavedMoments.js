@@ -9,19 +9,19 @@ import {
 
 import { useQuery, useMutation } from "@apollo/client";
 import { QUERY_ME } from "../utils/queries";
-import { REMOVE_BOOK } from "../utils/mutations";
-import { removeBookId } from "../utils/localStorage";
+import { REMOVE_MOMENT } from "../utils/mutations";
+import { removeMomentId } from "../utils/localStorage";
 
 import Auth from "../utils/auth";
 
-const SavedBooks = () => {
+const SavedMoments = () => {
   const { loading, data } = useQuery(QUERY_ME);
-  const [removeBook, { error }] = useMutation(REMOVE_BOOK);
+  const [removeMoment, { error }] = useMutation(REMOVE_MOMENT);
 
   const userData = data?.me || {};
 
   // create function that accepts the book's mongo _id value as param and deletes the book from the database
-  const handleDeleteBook = async (bookId) => {
+  const handleDeleteMoment = async (momentId) => {
     // get token
     const token = Auth.loggedIn() ? Auth.getToken() : null;
 
@@ -30,12 +30,12 @@ const SavedBooks = () => {
     }
 
     try {
-      const { data } = await removeBook({
-        variables: { bookId },
+      const { data } = await removeMoment({
+        variables: { momentId },
       });
 
       // upon success, remove book's id from localStorage
-      removeBookId(bookId);
+      removeMomentId(momentId);
     } catch (err) {
       console.error(err);
     }
@@ -54,30 +54,30 @@ const SavedBooks = () => {
       </Jumbotron>
       <Container>
         <h2>
-          {userData.savedBooks?.length
-            ? `Viewing ${userData.savedBooks.length} saved ${
-                userData.savedBooks.length === 1 ? "event" : "event"
+          {userData.savedMoments?.length
+            ? `Viewing ${userData.savedMoments.length} saved ${
+                userData.savedMoments.length === 1 ? "event" : "event"
               }:`
-            : "You have no savedevents!"}
+            : "You have no saved events!"}
         </h2>
         <CardColumns>
-          {userData.savedBooks?.map((book) => {
+          {userData.savedMoments?.map((moment) => {
             return (
-              <Card key={book.bookId} border="dark">
-                {book.image ? (
+              <Card key={moment.momentId} border="dark">
+                {moment.image ? (
                   <Card.Img
-                    src={book.image}
-                    alt={`The cover for ${book.title}`}
+                    src={moment.image}
+                    alt={`The cover for ${moment.title}`}
                     variant="top"
                   />
                 ) : null}
                 <Card.Body>
-                  <Card.Title>{book.title}</Card.Title>
-                  <p className="small">Authors: {book.authors}</p>
-                  <Card.Text>{book.description}</Card.Text>
+                  <Card.Title>{moment.title}</Card.Title>
+                  <p className="small">Authors: {moment.authors}</p>
+                  <Card.Text>{moment.description}</Card.Text>
                   <Button
                     className="btn-block btn-danger"
-                    onClick={() => handleDeleteBook(book.bookId)}
+                    onClick={() => handleDeleteMoment(moment.momentId)}
                   >
                     Delete this event!
                   </Button>
@@ -91,4 +91,4 @@ const SavedBooks = () => {
   );
 };
 
-export default SavedBooks;
+export default SavedMoments;

@@ -1,4 +1,4 @@
-import { gql } from '@apollo/client';
+import { gql } from "@apollo/client";
 
 export const QUERY_ME = gql`
   {
@@ -6,12 +6,13 @@ export const QUERY_ME = gql`
       _id
       username
       email
-      savedBooks {
-        bookId
-        authors
-        image
-        description
-        title
+      savedMoments {
+        momentId
+        location
+        header
+        summary
+        lattitude
+        longitude
         link
       }
     }

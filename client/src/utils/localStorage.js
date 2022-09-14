@@ -1,30 +1,32 @@
-export const getSavedBookIds = () => {
-  const savedBookIds = localStorage.getItem('saved_books')
-    ? JSON.parse(localStorage.getItem('saved_books'))
+export const getSavedMomentIds = () => {
+  const savedMomentIds = localStorage.getItem("saved_moments")
+    ? JSON.parse(localStorage.getItem("saved_moments"))
     : [];
 
-  return savedBookIds;
+  return savedMomentIds;
 };
 
-export const saveBookIds = (bookIdArr) => {
-  if (bookIdArr.length) {
-    localStorage.setItem('saved_books', JSON.stringify(bookIdArr));
+export const saveMomentIds = (momentIdArr) => {
+  if (momentIdArr.length) {
+    localStorage.setItem("saved_moments", JSON.stringify(momentIdArr));
   } else {
-    localStorage.removeItem('saved_books');
+    localStorage.removeItem("saved_moments");
   }
 };
 
-export const removeBookId = (bookId) => {
-  const savedBookIds = localStorage.getItem('saved_books')
-    ? JSON.parse(localStorage.getItem('saved_books'))
+export const removeMomentId = (momentId) => {
+  const savedMomentIds = localStorage.getItem("saved_moments")
+    ? JSON.parse(localStorage.getItem("saved_moments"))
     : null;
 
-  if (!savedBookIds) {
+  if (!savedMomentIds) {
     return false;
   }
 
-  const updatedSavedBookIds = savedBookIds?.filter((savedBookId) => savedBookId !== bookId);
-  localStorage.setItem('saved_books', JSON.stringify(updatedSavedBookIds));
+  const updatedSavedMomentIds = savedMomentIds?.filter(
+    (savedMomentId) => savedMomentId !== momentId
+  );
+  localStorage.setItem("saved_moments", JSON.stringify(updatedSavedMomentIds));
 
   return true;
 };
