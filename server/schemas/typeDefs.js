@@ -11,19 +11,20 @@ const typeDefs = gql`
 
   type Moment {
     momentId: ID!
-    authors: [String]
-    description: String
-    image: String
+    summary: String
     link: String
-    title: String!
+    header: String!
+    location: String!
+    latitude: Number
+    longitude: Number
   }
 
   type Events {
     eventId: ID!
     location: String
     date: [String]
-    longitude: [String]
-    latitude: [String]
+    longitude: Number
+    latitude: Number
     summary: String
     link: String
     header: String!
@@ -35,12 +36,12 @@ const typeDefs = gql`
   }
 
   input MomentInput {
-    authors: [String]
-    description: String!
-    momentId: String!
-    image: String
+    summary: String
     link: String
-    title: String!
+    header: String!
+    location: String!
+    latitude: Number
+    longitude: Number
   }
 
   type Query {
