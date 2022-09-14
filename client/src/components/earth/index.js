@@ -26,7 +26,9 @@ export function Earth(props) {
     [EarthDayMap, EarthNormalMap, EarthSpecularMap, EarthCloudsMap]
   );
 
+  //eslint-disable-next-line
   let worldEvents18 = history18;
+  //eslint-disable-next-line
   let worldEvents19 = history19;
   let worldEvents20 = history20;
 
@@ -54,7 +56,7 @@ export function Earth(props) {
     //eslint-disable-next-line
     const [hovered, setHover] = useState(false);
     //eslint-disable-next-line
-    const [active, setActive] = useState(false);
+    // const [active, setActive] = useState(false);
 
     //eslint-disable-next-line
     useEffect(() => {
@@ -85,7 +87,6 @@ export function Earth(props) {
             color: 'black',
             backgroundColor: 'black',
             width: '18rem',
-            
           }}
         >
           <div className="card">
@@ -98,7 +99,9 @@ export function Earth(props) {
                 Learn More
               </button>
               <br></br>
-              <button type="button" className="btn btn-primary">Save Moment</button>
+              <button type="button" className="btn btn-primary">
+                Save Moment
+              </button>
             </div>
           </div>
         </Html>
@@ -111,14 +114,61 @@ export function Earth(props) {
   //click to zoom function
   function SelectToZoom({ children }) {
     const api = useBounds();
+    //eslint-disable-next-line
+    const coordRef = useRef();
+
+    //eslint-disable-next-line
+    const [active, setActive] = useState(false);
+    //define variable to hold the information from the click event
+    let createDiv = (h) => {
+      let historyData = h.userData;
+      console.log(historyData.header);
+
+      return (
+        <Html
+          scaleFactor={6}
+          style={{
+            pointerEvents: 'none',
+            display: active ? 'block' : 'none',
+            color: 'white',
+            backgroundColor: 'blue',
+            width: '18rem',
+          }}
+        >
+          <div className="card">
+            <div className="card-body">
+              <div className="text-bold card-title">{historyData.header}</div>
+              <p className="card-text font-weight-bold">
+                <strong>{historyData.location}</strong> <br></br>{' '}
+                {historyData.date}
+              </p>
+              <button className="btn btn-success mb-2" href={historyData.link}>
+                Learn More
+              </button>
+              <br></br>
+              <button type="button" className="btn btn-primary">
+                Save Moment
+              </button>
+            </div>
+          </div>
+        </Html>
+      );
+    };
     return (
       <group
+        //eslint-disable-next-line
+        ref={coordRef}
         onClick={(e) => (
-          e.stopPropagation(), e.delta <= 2 && api.refresh(e.object).fit()
+          e.stopPropagation(),
+          e.delta <= 2 && api.refresh(e.object).fit(),
+          setActive(true),
+          createDiv(e.object)
         )}
-        onPointerMissed={(e) => e.button === 0 && api.refresh().fit()}
+        onPointerMissed={(e) => (
+          e.button === 0 && api.refresh().fit(), setActive(false)
+        )}
       >
-        {children}
+        {children};
       </group>
     );
   }
@@ -180,7 +230,7 @@ export function Earth(props) {
           enableZoom={true}
           enablePan={true}
           enableRotate={true}
-          zoomSpeed={0.6}
+          zoomSpeed={0.8}
           panSpeed={0.5}
           rotationSpeed={0.4}
         />
