@@ -2,12 +2,7 @@ const { Schema } = require("mongoose");
 
 // This is a subdocument schema, it won't become its own model but we'll use it as the schema for the User's `savedMoments` array in User.js
 const momentSchema = new Schema({
-  authors: [
-    {
-      type: String,
-    },
-  ],
-  description: {
+  summary: {
     type: String,
     required: true,
   },
@@ -16,13 +11,16 @@ const momentSchema = new Schema({
     type: String,
     required: true,
   },
-  image: {
-    type: String,
+  latitude: {
+    type: Number,
+  },
+  longitude: {
+    type: Number,
   },
   link: {
     type: String,
   },
-  title: {
+  header: {
     type: String,
     required: true,
   },
