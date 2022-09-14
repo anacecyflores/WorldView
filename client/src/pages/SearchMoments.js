@@ -109,7 +109,7 @@ const SearchMoments = () => {
                   // onChange={(e) => setSearchInput(e.target.value)}
                   type="text"
                   size="sm"
-                  placeholder="ie: United Kingdom"
+                  placeholder="ie: Pakistan"
                 />
               </Col>
             </Form.Row>
@@ -122,7 +122,7 @@ const SearchMoments = () => {
                   // onChange={(e) => setSearchInput(e.target.value)}
                   type="text"
                   size="sm"
-                  placeholder="ie: Queen Elizabeth's II Death"
+                  placeholder="ie: Terrorist Osama Bin Laden killed"
                 />
                 <h5>Century</h5>
                 <Form.Control as="select" size="sm">
