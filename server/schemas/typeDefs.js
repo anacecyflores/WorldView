@@ -15,19 +15,8 @@ const typeDefs = gql`
     link: String
     header: String!
     location: String!
-    latitude: Number
-    longitude: Number
-  }
-
-  type Events {
-    eventId: ID!
-    location: String
-    date: [String]
-    longitude: Number
-    latitude: Number
-    summary: String
-    link: String
-    header: String!
+    latitude: Int
+    longitude: Int
   }
 
   type Auth {
@@ -40,8 +29,8 @@ const typeDefs = gql`
     link: String
     header: String!
     location: String!
-    latitude: Number
-    longitude: Number
+    latitude: Int
+    longitude: Int
   }
 
   type Query {
