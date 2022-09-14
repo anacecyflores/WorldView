@@ -10,7 +10,7 @@ const AppNavbar = () => {
   // set modal display state
   const [showModal, setShowModal] = useState(false);
   const [showAboutModal, setShowAboutModal] = useState(false)
-  const [showSavedModal, setShowSavedModal] = useState(false)
+  // const [showSavedModal, setShowSavedModal] = useState(false)
 
 
   return (
@@ -30,7 +30,7 @@ const AppNavbar = () => {
               {/* if user is logged in show saved books and logout */}
               {Auth.loggedIn() ? (
                 <>
-                  <Nav.Link onClick={() => setShowSavedModal(true)}> {/* or as={Link} to="/saved" so it goes to another page, SavedBooks*/}
+                  <Nav.Link onClick={() => setShowAboutModal(true)}> {/* or as={Link} to="/saved" so it goes to another page, SavedBooks*/}
                     Saved Moments
                   </Nav.Link>
                   <Nav.Link onClick={Auth.logout}>Logout</Nav.Link>
@@ -97,21 +97,6 @@ const AppNavbar = () => {
         </Modal.Body>
       </Modal>
 
-      {/* set modal data up */}
-      <Modal
-        size="lg"
-        show={showSavedModal}
-        onHide={() => setShowSavedModal(false)}
-        aria-labelledby="saved-modal"
-      >
-        {/* tab container to do either signup or login component */}
-        <Modal.Header closeButton>
-          <Modal.Title>Saved Moments</Modal.Title>
-        </Modal.Header>
-
-        <Modal.Body>
-        </Modal.Body>
-      </Modal>
     </>
   );
 };
