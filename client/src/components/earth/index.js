@@ -86,7 +86,7 @@ export function Earth(props) {
             display: hovered ? 'block' : 'none',
             color: 'black',
             backgroundColor: 'black',
-            width: '18rem',
+            width: '13rem',
           }}
         >
           <div className="card">
@@ -95,13 +95,6 @@ export function Earth(props) {
               <p className="card-text font-weight-bold">
                 <strong>{wEvent.location}</strong> <br></br> {wEvent.date}
               </p>
-              <button className="btn btn-success mb-2" href={wEvent.link}>
-                Learn More
-              </button>
-              <br></br>
-              <button type="button" className="btn btn-primary">
-                Save Moment
-              </button>
             </div>
           </div>
         </Html>
