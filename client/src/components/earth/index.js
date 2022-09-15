@@ -56,7 +56,7 @@ export function Earth(props) {
     //eslint-disable-next-line
     const [hovered, setHover] = useState(false);
     //eslint-disable-next-line
-    // const [active, setActive] = useState(false);
+    const [active, setActive] = useState(false);
 
     //eslint-disable-next-line
     useEffect(() => {
@@ -76,6 +76,8 @@ export function Earth(props) {
           e.stopPropagation();
           setHover(false);
         }}
+        onClick={(e) => (e.stopPropagation(), setActive(true))}
+        onPointerMissed={(e) => setActive(false)}
         position={[pos.x, pos.z, pos.y]}
         userData={wEvent}
       >
@@ -98,70 +100,44 @@ export function Earth(props) {
             </div>
           </div>
         </Html>
+        <Html
+          scaleFactor={8}
+          style={{
+            pointerEvents: 'none',
+            display: active ? 'block' : 'none',
+            color: 'white',
+            backgroundColor: 'blue',
+            width: '13rem',
+          }}
+        >
+          <div className="card">
+            <div className="card-body">
+              <div className="text-bold card-title">{wEvent.header}</div>
+              <p className="card-text font-weight-bold">
+                <strong>{wEvent.location}</strong> <br></br> {wEvent.summary}
+              </p>
+            </div>
+          </div>
+        </Html>
         <sphereGeometry args={[0.01, 20, 20]} />
         <meshBasicMaterial color={hovered ? 'green' : 'orange'} />
       </mesh>
     );
   }
 
-  //click to zoom function
   function SelectToZoom({ children }) {
     const api = useBounds();
     //eslint-disable-next-line
-    const coordRef = useRef();
-
-    //eslint-disable-next-line
-    const [active, setActive] = useState(false);
-    //define variable to hold the information from the click event
-    let createDiv = (h) => {
-      let historyData = h.userData;
-      console.log(historyData.header);
-
-      return (
-        <Html
-          scaleFactor={6}
-          style={{
-            pointerEvents: 'none',
-            display: active ? 'block' : 'none',
-            color: 'white',
-            backgroundColor: 'blue',
-            width: '18rem',
-          }}
-        >
-          <div className="card">
-            <div className="card-body">
-              <div className="text-bold card-title">{historyData.header}</div>
-              <p className="card-text font-weight-bold">
-                <strong>{historyData.location}</strong> <br></br>{' '}
-                {historyData.date}
-              </p>
-              <button className="btn btn-success mb-2" href={historyData.link}>
-                Learn More
-              </button>
-              <br></br>
-              <button type="button" className="btn btn-primary">
-                Save Moment
-              </button>
-            </div>
-          </div>
-        </Html>
-      );
-    };
+    // const [active, setActive] = useState(false);
     return (
       <group
-        //eslint-disable-next-line
-        ref={coordRef}
         onClick={(e) => (
-          e.stopPropagation(),
-          e.delta <= 2 && api.refresh(e.object).fit(),
-          setActive(true),
-          createDiv(e.object)
+          e.stopPropagation(), e.delta <= 2 && api.refresh(e.object).fit()
+          // setActive(true)
         )}
-        onPointerMissed={(e) => (
-          e.button === 0 && api.refresh().fit(), setActive(false)
-        )}
+        onPointerMissed={(e) => e.button === 0 && api.refresh().fit()}
       >
-        {children};
+        {children}
       </group>
     );
   }
