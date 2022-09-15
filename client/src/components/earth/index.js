@@ -1,4 +1,5 @@
 import React, { useRef, useState, useEffect } from 'react';
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 //eslint-disable-next-line
 import { useLoader, useFrame } from '@react-three/fiber';
 import { TextureLoader } from 'three';
@@ -77,7 +78,7 @@ export function Earth(props) {
           setHover(false);
         }}
         onClick={(e) => (e.stopPropagation(), setActive(true))}
-        onPointerMissed={(e) => setActive(false)}
+        // onPointerMissed={(e) => setActive(false)}
         position={[pos.x, pos.z, pos.y]}
         userData={wEvent}
       >
@@ -103,19 +104,26 @@ export function Earth(props) {
         <Html
           scaleFactor={8}
           style={{
-            pointerEvents: 'none',
             display: active ? 'block' : 'none',
             color: 'white',
             backgroundColor: 'blue',
             width: '13rem',
           }}
+          location={wEvent.link}
         >
           <div className="card">
             <div className="card-body">
               <div className="text-bold card-title">{wEvent.header}</div>
-              <p className="card-text font-weight-bold">
-                <strong>{wEvent.location}</strong> <br></br> {wEvent.summary}
-              </p>
+              <a
+                className="card-text font-weight-bold"
+                href={wEvent.link}
+                location={wEvent.link}
+                rel="noreferrer"
+                target={'_blank'}
+              >
+                {wEvent.link} <br></br>
+              </a>
+              <p>{wEvent.summary}</p>
             </div>
           </div>
         </Html>
@@ -135,7 +143,7 @@ export function Earth(props) {
           e.stopPropagation(), e.delta <= 2 && api.refresh(e.object).fit()
           // setActive(true)
         )}
-        onPointerMissed={(e) => e.button === 0 && api.refresh().fit()}
+        // onPointerMissed={(e) => e.button === 0 && api.refresh().fit()}
       >
         {children}
       </group>
