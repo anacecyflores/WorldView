@@ -1,5 +1,12 @@
 import React, { useRef, useState, useEffect } from 'react';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import { SAVE_MOMENT } from '../../utils/mutations';
+import {
+  ApolloClient,
+  InMemoryCache,
+  ApolloProvider,
+  createHttpLink,
+} from '@apollo/client';
 //eslint-disable-next-line
 import { useLoader, useFrame } from '@react-three/fiber';
 import { TextureLoader } from 'three';
@@ -22,6 +29,18 @@ import EarthSpecularMap from '../../assets/textures/8k_earth_specular_map.jpg';
 import EarthCloudsMap from '../../assets/textures/8k_earth_clouds.jpg';
 
 export function Earth(props) {
+  // const [saveEvent, { error }] = useMutation(SAVE_MOMENT);
+
+  // const handleSaveEvent = async (eventToAdd) => {
+  //   try {
+  //     const { historyData } = await saveEvent({
+  //       variables: { ...eventToAdd },
+  //     });
+  //   } catch (error) {
+  //     console.error(error);
+  //   }
+  // };
+
   const [colorMap, normalMap, specularMap, cloudsMap] = useLoader(
     TextureLoader,
     [EarthDayMap, EarthNormalMap, EarthSpecularMap, EarthCloudsMap]
@@ -60,9 +79,9 @@ export function Earth(props) {
     const [active, setActive] = useState(false);
 
     //eslint-disable-next-line
-    useEffect(() => {
-      document.body.style.cursor = hovered ? 'pointer' : 'auto';
-    }, [hovered]);
+    // useEffect(() => {
+    //   document.body.style.cursor = hovered ? 'pointer' : 'auto';
+    // }, [hovered]);
 
     return (
       <mesh
@@ -95,9 +114,9 @@ export function Earth(props) {
           <div className="card">
             <div className="card-body">
               <div className="text-bold card-title">{wEvent.header}</div>
-              <p className="card-text font-weight-bold">
+              {/* <p className="card-text font-weight-bold">
                 <strong>{wEvent.location}</strong> <br></br> {wEvent.date}
-              </p>
+              </p> */}
             </div>
           </div>
         </Html>
@@ -114,6 +133,13 @@ export function Earth(props) {
           <div className="card">
             <div className="card-body">
               <div className="text-bold card-title">{wEvent.header}</div>
+              <button
+                type="button"
+                className="btn center mb-3 btn-green"
+                // onClick={() => handleSaveEvent(wEvent)}
+              >
+                Save Event
+              </button>
               <a
                 className="card-text font-weight-bold"
                 href={wEvent.link}
@@ -160,6 +186,7 @@ export function Earth(props) {
 
   return (
     <>
+      {/* <ApolloProvider client={client}> */}
       {/* light from all directions */}
       <ambientLight intensity={2} />
 
@@ -212,6 +239,7 @@ export function Earth(props) {
           rotationSpeed={0.4}
         />
       </mesh>
+      {/* </ApolloProvider> */}
     </>
   );
 }
