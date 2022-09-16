@@ -1,7 +1,5 @@
 # WorldView 🗺
 
-🤝  Collaborator's Github: [Ana C. Flores](https://github.com/anacecyflores1), [Mason Benson](https://github.com/mbenson025), [Cristian Vargas ](https://github.com/vcristian1).
-
 🌍 [Deployed App Link](https://my-world-view.herokuapp.com/) 🌎
 
 🌐 [Globe Demo Link](https://wvtestapp.herokuapp.com/) 🌐
@@ -25,7 +23,11 @@
 ## Description
 
 ```
-React Globe
+Our react-based globe shows top world events from three different centuries:
+1800s, 1900s, and the 2000s.
+    You are able to explore the world’s events by simply rotating the globe to find the world’s area you are interested in.
+When you hover over a location, you will obtain the summary of the event, the date and a link to learn more!
+As a logged-in user, you are able to save events you are interested in coming back to in the future.
 ```
 
 ## Usage
@@ -49,7 +51,7 @@ npm run develop
 ```
 
 <br>
-<img src="./src/assets/" alt="" title=""> 
+<img src="./src/assets/screenshots/india.png" alt="" title=""> 
 <br>
 
 **[⬆ back to top](#table-of-contents)**
@@ -69,17 +71,15 @@ npm run develop
 
 ## Questions
 
-Contact us here:
-
 ✉️  You can contact us at
 
-[Ana C. Flores](mailto:anacecyflores1@gmail.com)
+Github: [Ana C. Flores](https://github.com/anacecyflores1)
 <a href="mailto: anacecyflores1@gmail.com"><img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white&color=071A2C" alt="Gmail"/></a><a href="https://www.linkedin.com/in/anacecyflores/"><img src="https://img.shields.io/badge/LinkedIn-blue?style=for-the-badge&logo=linkedin&logoColor=white&color=071A2C" alt="LinkedIn Badge"/></a><a href="https://cecy-professional-portfolio.herokuapp.com/" target="_blank"><img src="https://img.shields.io/badge/Profile-430098?style=for-the-badge&logo=heroku&logoColor=white&color=071A2C" alt="Profile Badge"/></a>
 
-[Mason Benson](mailto:mbenson025@gmail.com),
+Github:[Mason Benson](https://github.com/mbenson025)
 <a href="mailto: mbenson025@gmail.com"><img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white&color=071A2C" alt="Gmail"/></a><a href="https://www.linkedin.com/in/mason-benson-6591b5102/"><img src="https://img.shields.io/badge/LinkedIn-blue?style=for-the-badge&logo=linkedin&logoColor=white&color=071A2C" alt="LinkedIn Badge"/></a><a href="https://mb-reactportfolio.herokuapp.com/" target="_blank"><img src="https://img.shields.io/badge/Profile-430098?style=for-the-badge&logo=heroku&logoColor=white&color=071A2C" alt="Profile Badge"/></a>
 
-[Cristian Vargas ](mailto:cristian.v0223@gmail.com).
+Github:[Cristian Vargas ](https://github.com/vcristian1)
 <a href="mailto: cristian.v0223@gmail.com"><img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white&color=071A2C" alt="Gmail"/></a><a href="https://www.linkedin.com/"><img src="https://img.shields.io/badge/LinkedIn-blue?style=for-the-badge&logo=linkedin&logoColor=white&color=071A2C" alt="LinkedIn Badge"/></a><a href="https://vcristian1.github.io/vcristian_portfolio_demo/" target="_blank"><img src="https://img.shields.io/badge/Profile-430098?style=for-the-badge&logo=heroku&logoColor=white&color=071A2C" alt="Profile Badge"/></a>
 
 **[⬆ back to top](#table-of-contents)**
