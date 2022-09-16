@@ -225,7 +225,7 @@ export function Earth(props) {
       <Bounds fit clip observe margin={6.5}>
         <SelectToZoom>
           {/* coordinates */}
-          {worldEvents20.map((w) => createMesh(w))}
+          {worldEvents19.map((w) => createMesh(w))}
         </SelectToZoom>
       </Bounds>
 
