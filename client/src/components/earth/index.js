@@ -89,6 +89,14 @@ export function Earth(props) {
         key={wEvent.header}
         ref={coordRef}
         {...props}
+        onPointerEnter={(e) => {
+          e.stopPropagation();
+          setHover(true);
+        }}
+        onPointerLeave={(e) => {
+          e.stopPropagation();
+          setHover(false);
+        }}
         onPointerOver={(e) => {
           e.stopPropagation();
           setHover(true);
@@ -225,7 +233,7 @@ export function Earth(props) {
       <Bounds fit clip observe margin={6.5}>
         <SelectToZoom>
           {/* coordinates */}
-          {worldEvents19.map((w) => createMesh(w))}
+          {worldEvents18.map((w) => createMesh(w))}
         </SelectToZoom>
       </Bounds>
 
