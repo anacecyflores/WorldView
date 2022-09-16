@@ -29,7 +29,7 @@ const AppNavbar = () => {
                   <Nav.Link onClick={() => setShowSavedModal(true)}>
                     {" "}
                     {/* or as={Link} to="/saved" so it goes to another page, SavedMoments*/}
-                    Saved Moments
+                    Saved Events
                   </Nav.Link>
                   <Nav.Link onClick={Auth.logout}>Logout</Nav.Link>
                 </>
@@ -90,7 +90,7 @@ const AppNavbar = () => {
 
         <Modal.Body>
           <p>
-            WorldView 🌎 is a React and GraphQL application, using react-globe,
+            🌎 WorldView is a React and GraphQL application, using react-globe,
             to function as an eductional resource for students to learn about
             historical moments around the world. Hover over any coordinate on
             the interactive globe to learn about a historical moment at that
@@ -114,10 +114,10 @@ const AppNavbar = () => {
       >
         {/* tab container to do either signup or login component */}
         <Modal.Header closeButton>
-          <Modal.Title>Saved Moments</Modal.Title>
+          <Modal.Title>Saved Events</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <p>No Saved Moments!</p>
+          <p>No Saved Events!</p>
         </Modal.Body>
       </Modal>
     </>

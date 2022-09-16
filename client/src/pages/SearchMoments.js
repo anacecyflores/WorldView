@@ -92,16 +92,17 @@ const SearchMoments = () => {
     <>
       <Jumbotron fluid className="text-light bg-dark">
         <Container>
-          <h1 id="header">Welcome to WorldView!</h1>
+          <h1 id="header">Welcome to your WorldView!</h1>
           <p className="text-center">
-            Find the location of a country's historical moments on the WorldView
-            globe! Fill out the form below to begin.
+            Spin the globe and click on the locations to learn about historical
+            events though the centuries! Search by century or Search by event
+            keyword below:
           </p>
 
           <Form onSubmit={handleFormSubmit}>
-            <h5>Country</h5>
+            {/* <h5>Country</h5> */}
             <Form.Row>
-              <Col xs={16} md={12}>
+              {/* <Col xs={16} md={12}>
                 <Form.Control
                   name="countrySearchInput"
                   // value={searchInput}
@@ -110,9 +111,10 @@ const SearchMoments = () => {
                   size="sm"
                   placeholder="ie: Pakistan"
                 />
-              </Col>
+              </Col> */}
             </Form.Row>
-            <h5>Moment</h5>
+
+            <h5>Event</h5>
             <Form.Row>
               <Col xs={16} md={12}>
                 <Form.Control
@@ -121,7 +123,7 @@ const SearchMoments = () => {
                   // onChange={(e) => setSearchInput(e.target.value)}
                   type="text"
                   size="sm"
-                  placeholder="ie: Terrorist Osama Bin Laden killed"
+                  placeholder="ie: wars, elections, deaths"
                 />
                 <h5>Century</h5>
                 <Form.Control as="select" size="sm">
@@ -136,7 +138,7 @@ const SearchMoments = () => {
                   as="input"
                   type="button"
                   className="text-center"
-                  value="Search 🌎"
+                  value="Search Events 🌎"
                   size="med"
                 />{" "}
               </Col>
