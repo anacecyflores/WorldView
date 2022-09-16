@@ -13,7 +13,6 @@
 ## Table of Contents
 
 - [Description](#description)
-- [Installation](#installation)
 - [Usage](#usage)
 - [Screenshots](#screenshots)
 - [Technologies Used](#technologies-used)
@@ -27,7 +26,8 @@ Our react-based globe shows top world events from three different centuries:
 1800s, 1900s, and the 2000s.
     You are able to explore the world’s events by simply rotating the globe to find the world’s area you are interested in.
 When you hover over a location, you will obtain the summary of the event, the date and a link to learn more!
-As a logged-in user, you are able to save events you are interested in coming back to in the future.
+    As a logged-in user, you are able to save events you are interested in coming back to in the future.
+
 ```
 
 ## Usage
@@ -47,11 +47,35 @@ npm run develop
 ## Screenshots
 
 ```
-
+Search Navigation Bar
 ```
 
 <br>
-<img src="./src/assets/screenshots/india.png" alt="" title=""> 
+<img src="client/src/assets/screenshots/search.png" alt="Search Nav Bar" title="Search Nav Bar"> 
+<br>
+
+```
+Historical event in India example:
+```
+
+<br>
+<img src="client/src/assets/screenshots/india.png" alt="India Example" title="India"> 
+<br>
+
+```
+"Obama becomes president" example:
+```
+
+<br>
+<img src="client/src/assets/screenshots/obama.png" alt="Obama becomes president example" title="Obama becomes president"> 
+<br>
+
+```
+Saved Page Example
+```
+
+<br>
+<img src="client/src/assets/screenshots/savedEvent.png" alt="Saved Page Example" title="Saved Page"> 
 <br>
 
 **[⬆ back to top](#table-of-contents)**
@@ -59,10 +83,10 @@ npm run develop
 ## Technologies Used
 
 - [React](https://nodejs.org/en/)
-- [Bootstrap](https://expressjs.com/)
-- [MongoDB](https://webpack.js.org/)
-- [Apollo](https://babeljs.io/)
-- [Heroku](https://www.npmjs.com/package/nodemon)
+- [Bootstrap](https://getbootstrap.com/docs/4.0/components/modal/)
+- [MongoDB](https://www.mongodb.com/docs/manual/tutorial/install-mongodb-on-os-x/)
+- [Apollo](https://studio.apollographql.com/)
+- [Heroku](https://id.heroku.com/login)
 - [Concurrently](https://www.npmjs.com/package/concurrently)
 
 <br>
