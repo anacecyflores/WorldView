@@ -27,6 +27,7 @@ import EarthDayMap from '../../assets/textures/8k_earth_daymap.jpg';
 import EarthNormalMap from '../../assets/textures/8k_earth_normal_map.jpg';
 import EarthSpecularMap from '../../assets/textures/8k_earth_specular_map.jpg';
 import EarthCloudsMap from '../../assets/textures/8k_earth_clouds.jpg';
+import { AutoComplete } from 'antd';
 
 export function Earth(props) {
   // const [saveEvent, { error }] = useMutation(SAVE_MOMENT);
@@ -96,6 +97,7 @@ export function Earth(props) {
           e.stopPropagation();
           setHover(false);
         }}
+        // onDoubleClick={(e) => (e.stopPropagation(), setActive(true))}
         onClick={(e) => (e.stopPropagation(), setActive(true))}
         // onPointerMissed={(e) => setActive(false)}
         position={[pos.x, pos.z, pos.y]}
@@ -114,9 +116,9 @@ export function Earth(props) {
           <div className="card">
             <div className="card-body">
               <div className="text-bold card-title">{wEvent.header}</div>
-              {/* <p className="card-text font-weight-bold">
-                <strong>{wEvent.location}</strong> <br></br> {wEvent.date}
-              </p> */}
+              <p className="card-text font-weight-bold">
+                {/* <strong>{wEvent.location}</strong> <br></br> {wEvent.date} */}
+              </p>
             </div>
           </div>
         </Html>
@@ -124,32 +126,40 @@ export function Earth(props) {
           scaleFactor={8}
           style={{
             display: active ? 'block' : 'none',
-            color: 'white',
-            backgroundColor: 'blue',
-            width: '13rem',
+            color: 'black',
+            width: '28rem',
           }}
           location={wEvent.link}
         >
           <div className="card">
             <div className="card-body">
               <div className="text-bold card-title">{wEvent.header}</div>
+              <div className='mb-2'><strong>{wEvent.location}</strong> {wEvent.date}</div>
+              <p className='small-font-size'>
+                {wEvent.summary}
+              </p>
               <button
                 type="button"
-                className="btn center mb-3 btn-green"
+                className="btn btn-primary"
                 // onClick={() => handleSaveEvent(wEvent)}
               >
                 Save Event
               </button>
               <a
-                className="card-text font-weight-bold"
+                className="btn btn-secondary"
                 href={wEvent.link}
-                location={wEvent.link}
                 rel="noreferrer"
                 target={'_blank'}
               >
-                {wEvent.link} <br></br>
+                Learn More
               </a>
-              <p>{wEvent.summary}</p>
+              <button
+                type="button"
+                className="btn btn-warning"
+                onClick={(e) => (e.stopPropagation(), setActive(false), setHover(false))}
+                >
+                Close Moment
+              </button>
             </div>
           </div>
         </Html>
