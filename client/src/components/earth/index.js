@@ -140,14 +140,14 @@ export function Earth(props) {
           e.stopPropagation();
           setHover(true);
         }}
-        onPointerLeave={(e) => {
-          e.stopPropagation();
-          setHover(false);
-        }}
-        onPointerOver={(e) => {
-          e.stopPropagation();
-          setHover(true);
-        }}
+        // onPointerLeave={(e) => {
+        //   e.stopPropagation();
+        //   setHover(false);
+        // }}
+        // onPointerOver={(e) => {
+        //   e.stopPropagation();
+        //   setHover(true);
+        // }}
         onPointerOut={(e) => {
           e.stopPropagation();
           setHover(false);
@@ -282,7 +282,7 @@ export function Earth(props) {
         />
       </mesh>
 
-      <Bounds fit clip observe margin={6.5}>
+      <Bounds fit clip observe margin={0.90}>
         <SelectToZoom>
           {/* coordinates */}
           {worldEvents18.map((w) => createMesh(w))}
