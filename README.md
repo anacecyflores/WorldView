@@ -17,6 +17,9 @@
 
 ## Description
 
+<img src="client/src/assets/screenshots/about.png" alt="About Our Project" title="About WorldView"> 
+<br>
+
 ```
 Our react-based globe shows top world events from three different centuries:
 1800s, 1900s, and the 2000s.
@@ -31,11 +34,15 @@ As a logged-in user, you are able to save events you are interested in coming ba
 Install dependencies:
 
 ```
+
 npm i
+
 ```
 
 ```
+
 npm run develop
+
 ```
 
 **[⬆ back to top](#table-of-contents)**
@@ -43,35 +50,43 @@ npm run develop
 ## Screenshots
 
 ```
+
 Search Navigation Bar:
+
 ```
 
 <br>
-<img src="client/src/assets/screenshots/search.png" alt="Search Nav Bar" title="Search Nav Bar"> 
+<img src="client/src/assets/screenshots/search.png" alt="Search Nav Bar" title="Search Nav Bar">
 <br>
 
 ```
+
 Historical event in India example:
+
 ```
 
 <br>
-<img src="client/src/assets/screenshots/india.png" alt="India Example" title="India"> 
+<img src="client/src/assets/screenshots/india.png" alt="India Example" title="India">
 <br>
 
 ```
+
 "Obama becomes president" example:
+
 ```
 
 <br>
-<img src="client/src/assets/screenshots/obama.png" alt="Obama becomes president example" title="Obama becomes president"> 
+<img src="client/src/assets/screenshots/obama.png" alt="Obama becomes president example" title="Obama becomes president">
 <br>
 
 ```
+
 Saved Page example:
+
 ```
 
 <br>
-<img src="client/src/assets/screenshots/savedEvent.png" alt="Saved Page Example" title="Saved Page"> 
+<img src="client/src/assets/screenshots/savedEvent.png" alt="Saved Page Example" title="Saved Page">
 <br>
 
 **[⬆ back to top](#table-of-contents)**
@@ -109,3 +124,7 @@ Copyright (c) 2022 Ana Cecilia Flores, Mason Benson, Cristian Vargas
 Licensed under the [MIT](LICENSE) license.
 
 **[⬆ back to top](#table-of-contents)**
+
+```
+
+```
