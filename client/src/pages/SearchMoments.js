@@ -9,6 +9,7 @@ import CardColumns from "react-bootstrap/CardColumns";
 import Container from "react-bootstrap/Container";
 import { QUERY_ME } from "../utils/queries.js";
 import { useQuery } from "@apollo/client";
+import { Stars } from '@react-three/drei';
 
 import { ApolloClient, useMutation } from "@apollo/client";
 import { SAVE_MOMENT } from "../utils/mutations";
@@ -90,8 +91,9 @@ const SearchMoments = () => {
   };
   return (
     <>
-      <Jumbotron fluid className="text-light bg-dark">
+      <Jumbotron fluid className="text-light">
         <Container>
+          
           <h1 id="header">Welcome to your WorldView!</h1>
           <p className="text-center">
             Spin the globe and click on the locations to learn about historical

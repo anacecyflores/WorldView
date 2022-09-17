@@ -4,6 +4,13 @@ import { Navbar, Nav, Container, Modal, Tab } from "react-bootstrap";
 import SignUpForm from "./SignupForm";
 import LoginForm from "./LoginForm";
 import Auth from "../utils/auth";
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import Mason from '../assets/screenshots/mason.jpeg'
+import Cristian from '../assets/screenshots/cristian.jpeg'
+import Ana from '../assets/screenshots/ana.jpeg'
+
+
 
 const AppNavbar = () => {
   // set modal display state
@@ -79,29 +86,61 @@ const AppNavbar = () => {
       {/* set modal data up */}
       <Modal
         size="lg"
+        style={{
+          color: 'white',
+          
+          
+        }}
         show={showAboutModal}
         onHide={() => setShowAboutModal(false)}
         aria-labelledby="about-modal"
       >
         {/* tab container to do either signup or login component */}
-        <Modal.Header closeButton>
-          <Modal.Title>About</Modal.Title>
+        <Modal.Header className="bg-dark" >
+          <Modal.Title style={{
+          textAlign: 'center'
+        }}>What is WorldView, and how do we use it?</Modal.Title>
         </Modal.Header>
 
-        <Modal.Body>
+        <Modal.Body style={{
+          backgroundColor: 'darkgray'
+        }}>
           <p>
-            🌎 WorldView is a React and GraphQL application, using react-globe,
-            to function as an eductional resource for students to learn about
-            historical moments around the world. Hover over any coordinate on
-            the interactive globe to learn about a historical moment at that
-            location, or fill in the prompt! Be sure to create an account and
-            save your favorite moments in history.
+            🌎 WorldView is an eductional application, using React.js, GraphQL, Three.js,
+            React-three-fiber which is a React renderer for three.js. This application
+            functions as visual eductional resource for students to learn about
+            historical moments that occured in different centuries around the world. Hover over any coordinate on
+            the globe to see the title of the event that occured, and click to see more!
+            Be sure to create an account so you can save your favorite moments in history.
           </p>
           <br></br>
           <p>
             <strong>Creators </strong>Ana Cecy Flores, Cristian Vargas, Mason
             Benson
           </p>
+          <Row>
+            <Col sm>
+              <img
+              src={Ana}
+              className='img-fluid rounded'
+              alt='example'
+              />
+            </Col>
+            <Col sm>
+              <img
+              src={Cristian}
+              className='img-fluid rounded'
+              alt='example'
+              />
+            </Col>
+            <Col sm>
+              <img
+              src={Mason}
+              className='img-fluid rounded'
+              alt='example'
+              />
+            </Col>
+          </Row>
         </Modal.Body>
       </Modal>
 
