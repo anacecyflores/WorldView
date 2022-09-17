@@ -52,7 +52,7 @@ npm run develop
 
 ```
 
-Search Navigation Bar:
+Demo:
 
 ```
 
