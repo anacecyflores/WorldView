@@ -57,6 +57,16 @@ Search Navigation Bar:
 ```
 
 <br>
+<img src="client/src/assets/screenshots/gif.gif" alt="Search Nav Bar" title="Search Nav Bar">
+<br>
+
+```
+
+Search Navigation Bar:
+
+```
+
+<br>
 <img src="client/src/assets/screenshots/search.png" alt="Search Nav Bar" title="Search Nav Bar">
 <br>
 
