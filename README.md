@@ -21,12 +21,13 @@
 <br>
 
 ```
-Our react-based globe shows top world events from three different centuries:
-1800s, 1900s, and the 2000s.
-You are able to explore the world’s events by simply rotating the globe to find the world’s area you are interested in.
-When you hover over a location, you will obtain the summary of the event, the date and a link to learn more!
+🌎 WorldView is an eductional application created using React.js, GraphQL, Three.js, and
+React-three-fiber, a React renderer for three.js. This application
+functions as visual eductional resource for students of all ages to learn about
+historical moments that occured in different centuries around the globe.
+Hover over any coordinate to see the title and location of the event that occured, and click on the coordinate to learn more!
 As a logged-in user, you are able to save events you are interested in coming back to in the future.
-
+Be sure to create an account so you can save your favorite moments in history!
 ```
 
 ## Usage
@@ -81,12 +82,12 @@ Historical event in India example:
 
 ```
 
-Saved Page example:
+Saved modal example:
 
 ```
 
 <br>
-<img src="client/src/assets/screenshots/savedEvent.png" alt="Saved Page Example" title="Saved Page">
+<img src="client/src/assets/screenshots/saved.png" alt="Saved Page Example" title="Saved Page">
 <br>
 
 **[⬆ back to top](#table-of-contents)**
@@ -124,7 +125,3 @@ Copyright (c) 2022 Ana Cecilia Flores, Mason Benson, Cristian Vargas
 Licensed under the [MIT](LICENSE) license.
 
 **[⬆ back to top](#table-of-contents)**
-
-```
-
-```
