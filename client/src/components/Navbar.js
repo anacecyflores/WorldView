@@ -147,7 +147,7 @@ const AppNavbar = () => {
             fontFamily: 'Space Mono',
           }}
         >
-          <Card style={{ width: '29rem' }}>
+          <Card style={{ width: '21rem' }}>
             <Card.Body>
               <Card.Text style={{
                 color: 'black'
@@ -217,7 +217,7 @@ const AppNavbar = () => {
             fontFamily: 'Space Mono',
           }}
         >
-          <Card style={{ width: '29rem' }}>
+          <Card style={{ width: '21rem' }}>
             <Card.Body>
               <Card.Title style={{
                 color: 'black'
