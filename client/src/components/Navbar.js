@@ -166,14 +166,24 @@ const AppNavbar = () => {
       <Modal
         size="lg"
         show={showSavedModal}
+        style={{
+          color: 'white',
+        }}
         onHide={() => setShowSavedModal(false)}
         aria-labelledby="saved-modal"
       >
         {/* tab container to do either signup or login component */}
-        <Modal.Header closeButton>
-          <Modal.Title>Saved Events</Modal.Title>
+        <Modal.Header className="bg-dark">
+          <Modal.Title style={{
+          textAlign: 'center',
+          fontFamily: 'Space Mono'
+          
+        }}>Saved Events</Modal.Title>
         </Modal.Header>
-        <Modal.Body>
+        <Modal.Body style={{
+          backgroundColor: 'darkgray',
+          fontFamily: 'Space Mono'
+        }}>
           <p>No Saved Events!</p>
         </Modal.Body>
       </Modal>
