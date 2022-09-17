@@ -184,7 +184,6 @@ const AppNavbar = () => {
           backgroundColor: 'darkgray',
           fontFamily: 'Space Mono'
         }}>
-          <p>No Saved Events!</p>
         </Modal.Body>
       </Modal>
     </>
