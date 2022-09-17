@@ -96,8 +96,8 @@ const SearchMoments = () => {
         <Container>
           <h1 id="header">Welcome to WorldView!</h1>
           <p className="text-center font">
-            Zoom in to the Globe and click or hover on the coordinates to learn about historical
-            events thoughout time. Select a Century or Search for an Event by keyword to begin!
+            Spin the Globe and click or hover over any coordinates to learn about a historical
+            event in time. Create an account to save your favorite historical events, or search for an event by keyword and select a century to begin!
             
           </p>
 
@@ -116,7 +116,7 @@ const SearchMoments = () => {
                     style={{
                       display: 'inline'
                     }}
-                    placeholder="ie: wars, elections, deaths"
+                    placeholder="ie: Louisiana Purchase, World War I, Pearl Harbor"
                   />
               </Col>
               <Col className="mt-1" style={{

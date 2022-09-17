@@ -151,36 +151,28 @@ const AppNavbar = () => {
             fontFamily: 'Space Mono',
           }}
         >
-          <Card style={{ width: '21rem' }}>
-            <Card.Body>
-              <Card.Text
-                style={{
-                  color: 'black',
-                }}
-              >
-                <p>
-                  🌎 WorldView is an eductional application created using
-                  React.js, GraphQL, Three.js, and React-three-fiber, a React
-                  renderer for three.js. This application functions as visual
-                  eductional resource for students of all ages to learn about
-                  historical moments that occured in different centuries around
-                  the globe. Hover over any coordinate to see the title and
-                  location of the event that occured, and click on the
-                  coordinate to learn more! Be sure to create an account so you
-                  can save your favorite moments in history.
-                </p>
+          <Card id='card' >
+            <Card.Body style={{ width: '21rem' }}>
+              <Card.Text style={{
+                color: 'black',
+                width: '27rem'
+              }}>
+              🌎 WorldView is an educational application created using React.js,
+              GraphQL, MongoDB, Three.js, and React-three-fiber, a React renderer for
+              Three.js. This application functions as visual educational resource
+              for students of all ages to learn about historical moments that
+              occured in different centuries around the globe. Be sure to create an
+              account so you can save your favorite moments in history.
               </Card.Text>
             </Card.Body>
             <Card.Body>
-              <Card.Text
-                style={{
-                  color: 'black',
-                }}
-              >
-                <p>
-                  <strong>Creators </strong>Ana Cecy Flores, Cristian Vargas,
-                  Mason Benson
-                </p>
+              <Card.Text style={{
+                color: 'black'
+              }}>
+              <p>
+                Creators: Ana Cecy Flores, Cristian Vargas, Mason
+                Benson
+              </p>
               </Card.Text>
               <Row>
                 <Col sm>
@@ -233,36 +225,21 @@ const AppNavbar = () => {
             fontFamily: 'Space Mono',
           }}
         >
-          {historyArr.length ? (
-            historyArr.map((history) => {
-              return (
-                <Card style={{ width: '21rem' }}>
-                  <Card.Body>
-                    <Card.Title
-                      style={{
-                        color: 'black',
-                      }}
-                    >
-                      🌎 {historyData.header}
-                    </Card.Title>
-                    <Card.Subtitle className="mb-2 text-muted">
-                      {historyData.location}, {historyData.date}
-                    </Card.Subtitle>
-                    <Card.Text
-                      style={{
-                        color: 'black',
-                      }}
-                    >
-                      {historyData.summary}
-                    </Card.Text>
-                    <Card.Link href={historyData.Link}>Learn More</Card.Link>
-                  </Card.Body>
-                </Card>
-              );
-            })
-          ) : (
-            <p>No Saved Events!</p>
-          )}
+          <Card id='card'>
+            <Card.Body style={{ width: '21rem' }}>
+              <Card.Title style={{
+                color: 'black'
+              }}>🌎 {historyData.header}</Card.Title>
+              <Card.Subtitle className="mb-2 text-muted">{historyData.location}, {historyData.date}</Card.Subtitle>
+              <Card.Text style={{
+                color: 'black',
+                width: '27rem'
+              }}>
+              {historyData.summary}
+              </Card.Text>
+              <Card.Link tag='a'><a href={historyData.Link}>Learn More</a></Card.Link>
+            </Card.Body>
+          </Card>
         </Modal.Body>
       </Modal>
     </>
