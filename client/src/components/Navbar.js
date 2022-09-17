@@ -15,6 +15,8 @@ import { QUERY_ME } from '../utils/queries';
 import { REMOVE_MOMENT } from '../utils/mutations';
 import { removeMomentId, saveMomentIds } from '../utils/localStorage';
 
+
+
 const AppNavbar = () => {
   // set modal display state
   const [showModal, setShowModal] = useState(false);
@@ -35,6 +37,7 @@ const AppNavbar = () => {
   // console.log(data);
   const userData = data?.me || {};
   // console.log(userData);
+  const cristianGithubLink = 'www.github.com/vcristian1'
 
   if (loading) {
     return <h2>LOADING...</h2>;
@@ -236,7 +239,6 @@ const AppNavbar = () => {
                 width: '27rem'
               }}>
               {historyData.summary}
-              </Card.Text>
               <a
                 className="btn btn-success"
                 href={historyData.link}
@@ -245,8 +247,8 @@ const AppNavbar = () => {
               >
                 Learn More
               </a>
+              </Card.Text>
             </Card.Body>
-            
           </Card>
         </Modal.Body>
       </Modal>
