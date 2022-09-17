@@ -237,8 +237,16 @@ const AppNavbar = () => {
               }}>
               {historyData.summary}
               </Card.Text>
-              <Card.Link tag='a'><a href={historyData.Link}>Learn More</a></Card.Link>
+              <a
+                className="btn btn-success"
+                href={historyData.link}
+                rel="noreferrer"
+                target={'_blank'}
+              >
+                Learn More
+              </a>
             </Card.Body>
+            
           </Card>
         </Modal.Body>
       </Modal>
