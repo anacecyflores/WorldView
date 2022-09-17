@@ -117,7 +117,7 @@ export function Earth(props) {
             pointerEvents: 'none',
             display: hovered ? 'block' : 'none',
             color: 'black',
-            backgroundColor: 'black',
+            backgroundColor: 'white',
             width: '12rem',
             fontSize: '10px'
           }}
