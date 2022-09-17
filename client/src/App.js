@@ -1,25 +1,25 @@
-import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import {
   ApolloClient,
   InMemoryCache,
   ApolloProvider,
   createHttpLink,
-} from "@apollo/client";
-import { setContext } from "@apollo/client/link/context";
+} from '@apollo/client';
+import { setContext } from '@apollo/client/link/context';
 
 // import './App.css';
-import "./index.css";
-import styled from "styled-components";
-import "bootstrap/dist/css/bootstrap.min.css";
-import { Canvas } from "@react-three/fiber";
+import './index.css';
+import styled from 'styled-components';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { Canvas } from '@react-three/fiber';
 // import { Suspense } from 'react';
-import { Earth } from "./components/earth";
+import { Earth } from './components/earth';
 
-import SearchMoments from "./pages/SearchMoments";
-import SavedMoments from "./pages/SavedMoments";
+import SearchMoments from './pages/SearchMoments';
+import SavedMoments from './pages/SavedMoments';
 // import topSection from './components/topSection/index.js'
-import AppNavbar from "./components/Navbar";
+import AppNavbar from './components/Navbar';
 
 const CanvasContainer = styled.div`
   width: 100%;
@@ -28,18 +28,19 @@ const CanvasContainer = styled.div`
 
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
-  uri: "/graphql",
+  uri: '/graphql',
 });
 
 // Construct request middleware that will attach the JWT token to every request as an `authorization` header
 const authLink = setContext((_, { headers }) => {
   // get the authentication token from local storage if it exists
-  const token = localStorage.getItem("id_token");
+  const token = localStorage.getItem('id_token');
+  console.log(token);
   // return the headers to the context so httpLink can read them
   return {
     headers: {
       ...headers,
-      authorization: token ? `Bearer ${token}` : "",
+      authorization: token ? `Bearer ${token}` : '',
     },
   };
 });
@@ -49,6 +50,17 @@ const client = new ApolloClient({
   link: authLink.concat(httpLink),
   cache: new InMemoryCache(),
 });
+
+export const BuildingCanvas = () => {
+  // const client = useApolloClient();
+  return (
+    <Canvas>
+      <ApolloProvider client={client}>
+        <Earth />
+      </ApolloProvider>
+    </Canvas>
+  );
+};
 
 function App() {
   return (
@@ -68,9 +80,7 @@ function App() {
           </>
         </Router>
       </ApolloProvider>
-      <Canvas>
-        <Earth />
-      </Canvas>
+      <BuildingCanvas />
     </CanvasContainer>
   );
 }

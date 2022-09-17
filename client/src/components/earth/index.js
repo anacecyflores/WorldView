@@ -6,7 +6,9 @@ import {
   InMemoryCache,
   ApolloProvider,
   createHttpLink,
+  useMutation,
 } from '@apollo/client';
+import { setContext } from '@apollo/client/link/context';
 //eslint-disable-next-line
 import { useLoader, useFrame } from '@react-three/fiber';
 import { TextureLoader } from 'three';
@@ -30,17 +32,26 @@ import EarthCloudsMap from '../../assets/textures/8k_earth_clouds.jpg';
 import { AutoComplete } from 'antd';
 
 export function Earth(props) {
-  // const [saveEvent, { error }] = useMutation(SAVE_MOMENT);
+  //-------APOLLO-------
+  const httpLink = createHttpLink({
+    uri: '/graphql',
+  });
 
-  // const handleSaveEvent = async (eventToAdd) => {
-  //   try {
-  //     const { historyData } = await saveEvent({
-  //       variables: { ...eventToAdd },
-  //     });
-  //   } catch (error) {
-  //     console.error(error);
-  //   }
-  // };
+  const authLink = setContext((_, { headers }) => {
+    const token = localStorage.getItem('id_token');
+    return {
+      headers: {
+        ...headers,
+        authorization: token ? `Bearer ${token}` : '',
+      },
+    };
+  });
+
+  const client = new ApolloClient({
+    link: authLink.concat(httpLink),
+    cache: new InMemoryCache(),
+  });
+  //-------APOLLO-------
 
   const [colorMap, normalMap, specularMap, cloudsMap] = useLoader(
     TextureLoader,
@@ -79,10 +90,46 @@ export function Earth(props) {
     //eslint-disable-next-line
     const [active, setActive] = useState(false);
 
+    //save event using graphql
+
     //eslint-disable-next-line
-    // useEffect(() => {
-    //   document.body.style.cursor = hovered ? 'pointer' : 'auto';
-    // }, [hovered]);
+    const [id, setid] = useState(false);
+    //eslint-disable-next-line
+    const [header, setheader] = useState(false);
+    //eslint-disable-next-line
+    const [location, setlocation] = useState(false);
+    //eslint-disable-next-line
+    const [date, setdate] = useState(false);
+    //eslint-disable-next-line
+    const [summary, setsummary] = useState(false);
+    //eslint-disable-next-line
+    const [lat, setlat] = useState(false);
+    //eslint-disable-next-line
+    const [lng, setlng] = useState(false);
+    //eslint-disable-next-line
+    const [link, setlink] = useState(false);
+
+    //eslint-disable-next-line
+    const [saveMoment, { error }] = useMutation(SAVE_MOMENT);
+
+    const addEvent = () => {
+      saveMoment({
+        variables: {
+          // id: wEvent.id,
+          header: wEvent.header,
+          location: wEvent.location,
+          date: wEvent.date,
+          summary: wEvent.summary,
+          // lat: wEvent.lat,
+          // lng: wEvent.lng,
+          // link: wEvent.link,
+        },
+      });
+
+      if (error) {
+        console.log(error);
+      }
+    };
 
     return (
       <mesh
@@ -119,13 +166,16 @@ export function Earth(props) {
             color: 'black',
             backgroundColor: 'black',
             width: '12rem',
-            fontSize: '10px'
+            fontSize: '10px',
           }}
         >
           <div className="card">
             <div className="card-body">
-              <div className="text-bold card-title">{wEvent.header}<br></br><strong>{wEvent.location}</strong></div>
-              
+              <div className="text-bold card-title">
+                {wEvent.header}
+                <br></br>
+                <strong>{wEvent.location}</strong>
+              </div>
             </div>
           </div>
         </Html>
@@ -135,21 +185,21 @@ export function Earth(props) {
             display: active ? 'block' : 'none',
             color: 'black',
             width: '20rem',
-            fontSize: '10px'
+            fontSize: '10px',
           }}
           location={wEvent.link}
         >
           <div className="card">
             <div className="card-body">
               <div className="text-bold card-title">{wEvent.header}</div>
-              <div className='mb-2'><strong>{wEvent.location}</strong> {wEvent.date}</div>
-              <p className='small-font-size'>
-                {wEvent.summary}
-              </p>
+              <div className="mb-2">
+                <strong>{wEvent.location}</strong> {wEvent.date}
+              </div>
+              <p className="small-font-size">{wEvent.summary}</p>
               <button
                 type="button"
                 className="btn btn-primary"
-                // onClick={() => handleSaveEvent(wEvent)}
+                onClick={() => addEvent()}
               >
                 Save Event
               </button>
@@ -164,8 +214,10 @@ export function Earth(props) {
               <button
                 type="button"
                 className="btn btn-warning"
-                onClick={(e) => (e.stopPropagation(), setActive(false), setHover(false))}
-                >
+                onClick={(e) => (
+                  e.stopPropagation(), setActive(false), setHover(false)
+                )}
+              >
                 Close Moment
               </button>
             </div>
