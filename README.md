@@ -19,7 +19,7 @@
 
 <img src="client/src/assets/screenshots/about.png" alt="About Our Project" title="About WorldView"> 
 <br>
-
+<!-- 
 ```
 🌎 WorldView is an eductional application created using React.js, GraphQL, Three.js, and
 React-three-fiber, a React renderer for three.js. This application
@@ -28,7 +28,7 @@ historical moments that occured in different centuries around the globe.
 Hover over any coordinate to see the title and location of the event that occured, and click on the coordinate to learn more!
 As a logged-in user, you are able to save events you are interested in coming back to in the future.
 Be sure to create an account so you can save your favorite moments in history!
-```
+``` -->
 
 ## Usage
 
