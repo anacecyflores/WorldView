@@ -1,16 +1,18 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
-import { Navbar, Nav, Container, Modal, Tab } from "react-bootstrap";
-import SignUpForm from "./SignupForm";
-import LoginForm from "./LoginForm";
-import Auth from "../utils/auth";
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import { Navbar, Nav, Container, Modal, Tab } from 'react-bootstrap';
+import SignUpForm from './SignupForm';
+import LoginForm from './LoginForm';
+import Auth from '../utils/auth';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import Mason from '../assets/screenshots/mason.jpeg'
-import Cristian from '../assets/screenshots/cristian.jpeg'
-import Ana from '../assets/screenshots/ana.jpeg'
-
-
+import Mason from '../assets/screenshots/mason.jpeg';
+import Cristian from '../assets/screenshots/cristian.jpeg';
+import Ana from '../assets/screenshots/ana.jpeg';
+import { useQuery, useMutation } from '@apollo/client';
+import { QUERY_ME } from '../utils/queries';
+import { REMOVE_MOMENT } from '../utils/mutations';
+import { removeMomentId, saveMomentIds } from '../utils/localStorage';
 
 const AppNavbar = () => {
   // set modal display state
@@ -18,12 +20,25 @@ const AppNavbar = () => {
   const [showAboutModal, setShowAboutModal] = useState(false);
   const [showSavedModal, setShowSavedModal] = useState(false);
 
+  //load saved events
+  const { error, loading, data } = useQuery(QUERY_ME);
+  // const [removeMoment, { error }] = useMutation(REMOVE_MOMENT);
+
+  console.log(data);
+  const userData = data?.me || {};
+  console.log(userData);
+  console.log(error);
+
+  if (loading) {
+    return <h2>LOADING...</h2>;
+  }
+
   return (
     <>
       <Navbar bg="bg-black" variant="dark" expand="lg">
         <Container fluid>
           <Navbar.Brand as={Link} to="/">
-          🌎 WorldView 
+            🌎 WorldView
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="navbar" />
           <Navbar.Collapse id="navbar">
@@ -34,7 +49,7 @@ const AppNavbar = () => {
               {Auth.loggedIn() ? (
                 <>
                   <Nav.Link onClick={() => setShowSavedModal(true)}>
-                    {" "}
+                    {' '}
                     {/* or as={Link} to="/saved" so it goes to another page, SavedMoments*/}
                     Saved Events
                   </Nav.Link>
@@ -42,7 +57,7 @@ const AppNavbar = () => {
                 </>
               ) : (
                 <Nav.Link onClick={() => setShowModal(true)}>
-                  Sign Up  Log In
+                  Sign Up/ Log In
                 </Nav.Link>
               )}
             </Nav>
@@ -54,39 +69,42 @@ const AppNavbar = () => {
         size="lg"
         style={{
           color: 'black',
-          
-          
         }}
         show={showModal}
         onHide={() => setShowModal(false)}
         aria-labelledby="signup-modal"
       >
         {/* tab container to do either signup or login component */}
-        <Tab.Container defaultActiveKey="login" >
+        <Tab.Container defaultActiveKey="login">
           <Modal.Header className="bg-dark">
-            <Modal.Title id="signup-modal"
-            style={{
-              textAlign: 'center',
-              fontFamily: 'Space Mono',
-              
-            }}>
+            <Modal.Title
+              id="signup-modal"
+              style={{
+                textAlign: 'center',
+                fontFamily: 'Space Mono',
+              }}
+            >
               <Nav variant="pills">
                 <Nav.Item>
-                  <Nav.Link className="bg-dark" eventKey="login">Login</Nav.Link>
+                  <Nav.Link className="bg-dark" eventKey="login">
+                    Login
+                  </Nav.Link>
                 </Nav.Item>
                 <Nav.Item>
-                  <Nav.Link className="bg-dark" eventKey="signup">Sign Up</Nav.Link>
+                  <Nav.Link className="bg-dark" eventKey="signup">
+                    Sign Up
+                  </Nav.Link>
                 </Nav.Item>
               </Nav>
             </Modal.Title>
           </Modal.Header>
           <Modal.Body
-          style={{
-            backgroundColor: 'darkgray',
-            fontFamily: 'Space Mono'
-            
-          }}>
-            <Tab.Content >
+            style={{
+              backgroundColor: 'darkgray',
+              fontFamily: 'Space Mono',
+            }}
+          >
+            <Tab.Content>
               <Tab.Pane eventKey="login">
                 <LoginForm handleModalClose={() => setShowModal(false)} />
               </Tab.Pane>
@@ -103,8 +121,6 @@ const AppNavbar = () => {
         size="lg"
         style={{
           color: 'white',
-          
-          
         }}
         show={showAboutModal}
         onHide={() => setShowAboutModal(false)}
@@ -112,24 +128,31 @@ const AppNavbar = () => {
       >
         {/* tab container to do either signup or login component */}
         <Modal.Header className="bg-dark">
-          <Modal.Title style={{
-          textAlign: 'center',
-          fontFamily: 'Space Mono'
-          
-        }}>What is WorldView and How to Use It?</Modal.Title>
+          <Modal.Title
+            style={{
+              textAlign: 'center',
+              fontFamily: 'Space Mono',
+            }}
+          >
+            What is WorldView and How to Use It?
+          </Modal.Title>
         </Modal.Header>
 
-        <Modal.Body style={{
-          backgroundColor: 'darkgray',
-          fontFamily: 'Space Mono'
-        }}>
+        <Modal.Body
+          style={{
+            backgroundColor: 'darkgray',
+            fontFamily: 'Space Mono',
+          }}
+        >
           <p>
-            🌎 WorldView is an eductional application created using React.js, GraphQL, Three.js, and
-            React-three-fiber, a React renderer for three.js. This application
-            functions as visual eductional resource for students of all ages to learn about
-            historical moments that occured in different centuries around the globe. Hover over any coordinate to see 
-            the title and location of the event that occured, and click on the coordinate to learn more!
-            Be sure to create an account so you can save your favorite moments in history.
+            🌎 WorldView is an eductional application created using React.js,
+            GraphQL, Three.js, and React-three-fiber, a React renderer for
+            three.js. This application functions as visual eductional resource
+            for students of all ages to learn about historical moments that
+            occured in different centuries around the globe. Hover over any
+            coordinate to see the title and location of the event that occured,
+            and click on the coordinate to learn more! Be sure to create an
+            account so you can save your favorite moments in history.
           </p>
           <br></br>
           <p>
@@ -138,25 +161,13 @@ const AppNavbar = () => {
           </p>
           <Row>
             <Col sm>
-              <img
-              src={Ana}
-              className='img-fluid rounded'
-              alt='example'
-              />
+              <img src={Ana} className="img-fluid rounded" alt="example" />
             </Col>
             <Col sm>
-              <img
-              src={Cristian}
-              className='img-fluid rounded'
-              alt='example'
-              />
+              <img src={Cristian} className="img-fluid rounded" alt="example" />
             </Col>
             <Col sm>
-              <img
-              src={Mason}
-              className='img-fluid rounded'
-              alt='example'
-              />
+              <img src={Mason} className="img-fluid rounded" alt="example" />
             </Col>
           </Row>
         </Modal.Body>
@@ -174,16 +185,23 @@ const AppNavbar = () => {
       >
         {/* tab container to do either signup or login component */}
         <Modal.Header className="bg-dark">
-          <Modal.Title style={{
-          textAlign: 'center',
-          fontFamily: 'Space Mono'
-          
-        }}>Saved Events</Modal.Title>
+          <Modal.Title
+            style={{
+              textAlign: 'center',
+              fontFamily: 'Space Mono',
+            }}
+          >
+            Saved Events
+          </Modal.Title>
         </Modal.Header>
-        <Modal.Body style={{
-          backgroundColor: 'darkgray',
-          fontFamily: 'Space Mono'
-        }}>
+        <Modal.Body
+          style={{
+            backgroundColor: 'darkgray',
+            fontFamily: 'Space Mono',
+          }}
+        >
+          {userData.location}
+          <p>No Saved Events!</p>
         </Modal.Body>
       </Modal>
     </>

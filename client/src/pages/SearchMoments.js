@@ -96,8 +96,8 @@ const SearchMoments = () => {
         <Container>
           <h1 id="header">Welcome to WorldView!</h1>
           <p className="text-center font">
-            Spin the Globe and click or hover over the coordinates to learn about an historical
-            event in time. Search for an event by keyword and century to begin!
+            Zoom in to the Globe and click or hover on the coordinates to learn about historical
+            events thoughout time. Select a Century or Search for an Event by keyword to begin!
             
           </p>
 
