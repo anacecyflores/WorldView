@@ -93,7 +93,7 @@ export function Earth(props) {
     //save event using graphql
 
     //eslint-disable-next-line
-    const [id, setid] = useState(false);
+    const [momentId, setid] = useState(false);
     //eslint-disable-next-line
     const [header, setheader] = useState(false);
     //eslint-disable-next-line
@@ -113,22 +113,35 @@ export function Earth(props) {
     const [saveMoment, { error }] = useMutation(SAVE_MOMENT);
 
     const addEvent = () => {
-      saveMoment({
-        variables: {
-          // id: wEvent.id,
-          header: wEvent.header,
-          location: wEvent.location,
-          date: wEvent.date,
-          summary: wEvent.summary,
-          // lat: wEvent.lat,
-          // lng: wEvent.lng,
-          // link: wEvent.link,
-        },
-      });
+      let historyData = {
+        momentId: wEvent.id,
+        header: wEvent.header,
+        location: wEvent.location,
+        date: wEvent.date,
+        summary: wEvent.summary,
+        lat: wEvent.lat,
+        lng: wEvent.lng,
+        link: wEvent.link,
+      };
 
-      if (error) {
-        console.log(error);
-      }
+      localStorage.setItem('historyKey', JSON.stringify(historyData));
+
+      // saveMoment({
+      //   variables: {
+      //     momentId: wEvent.id,
+      //     header: wEvent.header,
+      //     location: wEvent.location,
+      //     date: wEvent.date,
+      //     summary: wEvent.summary,
+      //     lat: wEvent.lat,
+      //     lng: wEvent.lng,
+      //     link: wEvent.link,
+      //   },
+      // });
+
+      // if (error) {
+      //   console.log(error);
+      // }
     };
 
     return (
@@ -282,7 +295,7 @@ export function Earth(props) {
         />
       </mesh>
 
-      <Bounds fit clip observe margin={0.90}>
+      <Bounds fit clip observe margin={0.9}>
         <SelectToZoom>
           {/* coordinates */}
           {worldEvents18.map((w) => createMesh(w))}

@@ -20,14 +20,16 @@ const AppNavbar = () => {
   const [showAboutModal, setShowAboutModal] = useState(false);
   const [showSavedModal, setShowSavedModal] = useState(false);
 
+  var historyData = JSON.parse(localStorage.getItem('historyKey')) || [];
+  console.log(historyData);
+
   //load saved events
   const { error, loading, data } = useQuery(QUERY_ME);
   // const [removeMoment, { error }] = useMutation(REMOVE_MOMENT);
 
-  console.log(data);
+  // console.log(data);
   const userData = data?.me || {};
-  console.log(userData);
-  console.log(error);
+  // console.log(userData);
 
   if (loading) {
     return <h2>LOADING...</h2>;
@@ -200,7 +202,10 @@ const AppNavbar = () => {
             fontFamily: 'Space Mono',
           }}
         >
-          {userData.location}
+          <p>{historyData.header}</p>
+          <p>{historyData.date}</p>
+          <p>{historyData.location}</p>
+          <p>{historyData.summary}</p>
           <p>No Saved Events!</p>
         </Modal.Body>
       </Modal>
