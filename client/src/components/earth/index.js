@@ -166,7 +166,7 @@ export function Earth(props) {
             color: 'black',
             backgroundColor: 'white',
             width: '12rem',
-            fontSize: '10px',
+            fontSize: '11px',
           }}
         >
           <div className="card">
@@ -185,7 +185,7 @@ export function Earth(props) {
             display: active ? 'block' : 'none',
             color: 'black',
             width: '20rem',
-            fontSize: '10px',
+            fontSize: '11px',
           }}
           location={wEvent.link}
         >
