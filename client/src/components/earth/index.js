@@ -231,7 +231,7 @@ export function Earth(props) {
                   e.stopPropagation(), setActive(false), setHover(false)
                 )}
               >
-                Close Moment
+                Close Event
               </button>
             </div>
           </div>
