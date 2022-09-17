@@ -118,16 +118,14 @@ export function Earth(props) {
             display: hovered ? 'block' : 'none',
             color: 'black',
             backgroundColor: 'black',
-            width: '13rem',
-            
+            width: '12rem',
+            fontSize: '10px'
           }}
         >
           <div className="card">
             <div className="card-body">
-              <div className="text-bold card-title">{wEvent.header}</div>
-              <p className="card-text font-weight-bold">
-                {/* <strong>{wEvent.location}</strong> <br></br> {wEvent.date} */}
-              </p>
+              <div className="text-bold card-title">{wEvent.header}<br></br><strong>{wEvent.location}</strong></div>
+              
             </div>
           </div>
         </Html>
@@ -136,7 +134,8 @@ export function Earth(props) {
           style={{
             display: active ? 'block' : 'none',
             color: 'black',
-            width: '29rem',
+            width: '20rem',
+            fontSize: '10px'
           }}
           location={wEvent.link}
         >
@@ -235,6 +234,8 @@ export function Earth(props) {
         <SelectToZoom>
           {/* coordinates */}
           {worldEvents18.map((w) => createMesh(w))}
+          {worldEvents19.map((w) => createMesh(w))}
+          {worldEvents20.map((w) => createMesh(w))}
         </SelectToZoom>
       </Bounds>
 
