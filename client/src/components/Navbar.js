@@ -154,11 +154,11 @@ const AppNavbar = () => {
             fontFamily: 'Space Mono',
           }}
         >
-          <Card id='card' >
+          <Card >
             <Card.Body style={{ width: '21rem' }}>
-              <Card.Text style={{
+              <Card.Text id='card' style={{
                 color: 'black',
-                width: '27rem'
+                width: '21rem'
               }}>
               🌎 WorldView is an educational application created using React.js,
               GraphQL, MongoDB, Three.js, and React-three-fiber, a React renderer for
@@ -228,15 +228,16 @@ const AppNavbar = () => {
             fontFamily: 'Space Mono',
           }}
         >
-          <Card id='card'>
+          <Card style={{ width: '21.75rem' }}>
             <Card.Body style={{ width: '21rem' }}>
               <Card.Title style={{
                 color: 'black'
               }}>🌎 {historyData.header}</Card.Title>
-              <Card.Subtitle className="mb-2 text-muted">{historyData.location}, {historyData.date}</Card.Subtitle>
-              <Card.Text style={{
+              <Card.Subtitle className="mb-2 text-muted">{historyData.location} {historyData.date}</Card.Subtitle>
+              <Card.Text id='card' style={{
                 color: 'black',
-                width: '27rem'
+                width: '21rem'
+                
               }}>
               {historyData.summary}
               <a
