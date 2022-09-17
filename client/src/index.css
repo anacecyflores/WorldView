@@ -1,5 +1,6 @@
 html,
 body,
+header,
 #root {
   font-family: 'Space Mono';
   width: 100%;
@@ -12,6 +13,7 @@ body,
 #header {
   text-align: center;
 }
+
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100&family=Space+Mono&display=swap');
 

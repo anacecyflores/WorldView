@@ -119,6 +119,7 @@ export function Earth(props) {
             color: 'black',
             backgroundColor: 'black',
             width: '13rem',
+            
           }}
         >
           <div className="card">
@@ -135,7 +136,7 @@ export function Earth(props) {
           style={{
             display: active ? 'block' : 'none',
             color: 'black',
-            width: '28rem',
+            width: '29rem',
           }}
           location={wEvent.link}
         >
@@ -154,7 +155,7 @@ export function Earth(props) {
                 Save Event
               </button>
               <a
-                className="btn btn-secondary"
+                className="btn btn-success"
                 href={wEvent.link}
                 rel="noreferrer"
                 target={'_blank'}

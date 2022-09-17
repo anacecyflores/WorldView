@@ -91,59 +91,62 @@ const SearchMoments = () => {
   };
   return (
     <>
-      <Jumbotron fluid className="text-light">
+      <Jumbotron fluid className="text-light" >
         <Container>
-          
-          <h1 id="header">Welcome to your WorldView!</h1>
-          <p className="text-center">
-            Spin the globe and click on the locations to learn about historical
-            events though the centuries! Search by century or Search by event
-            keyword below:
+          <h1 id="header">Welcome to WorldView!</h1>
+          <p className="text-center font">
+            Zoom in to the Globe and click or hover on the coordinates to learn about historical
+            events thoughout time. Select a Century or Search for an Event by keyword to begin!
+            
           </p>
 
           <Form onSubmit={handleFormSubmit}>
             {/* <h5>Country</h5> */}
             <Form.Row>
-              {/* <Col xs={16} md={12}>
-                <Form.Control
-                  name="countrySearchInput"
-                  // value={searchInput}
-                  // onChange={(e) => setSearchInput(e.target.value)}
-                  type="text"
-                  size="sm"
-                  placeholder="ie: Pakistan"
-                />
-              </Col> */}
-            </Form.Row>
+              <Col sm>
+                  {/* <p>Event</p> */}
+                  <Form.Control
+                    name="eventSearchInput"
+                    // value={searchInput}
+                    // onChange={(e) => setSearchInput(e.target.value)}
+                    type="text"
+                    size="sm"
+                    style={{
+                      display: 'inline'
+                    }}
+                    placeholder="ie: wars, elections, deaths"
+                  />
+              </Col>
+              <Col sm className="mt-1" style={{
+                textAlign: 'center'
 
-            <h5>Event</h5>
-            <Form.Row>
-              <Col xs={16} md={12}>
-                <Form.Control
-                  name="eventSearchInput"
-                  // value={searchInput}
-                  // onChange={(e) => setSearchInput(e.target.value)}
-                  type="text"
-                  size="sm"
-                  placeholder="ie: wars, elections, deaths"
-                />
-                <h5>Century</h5>
-                <Form.Control as="select" size="sm">
+              }}>
+                {/* <p>Century</p> */}
+                <Form.Control as="select" size="sm"
+                style={{
+                  display: 'inline'
+                }}>
                   <option>Select a Century</option>
                   <option value="1">1800's</option>
                   <option value="2">1900's</option>
                   <option value="3">2000's</option>
                 </Form.Control>
-              </Col>
-              <Col xs={12} md={4} className="mt-2 text-center">
+                
                 <Button
                   as="input"
                   type="button"
-                  className="text-center"
+                  className="mt-1"
                   value="Search Events 🌎"
                   size="med"
-                />{" "}
+                />
+              
               </Col>
+            </Form.Row>
+
+            
+            <Form.Row >
+              
+              
             </Form.Row>
           </Form>
         </Container>

@@ -20,10 +20,10 @@ const AppNavbar = () => {
 
   return (
     <>
-      <Navbar bg="dark" variant="dark" expand="lg">
+      <Navbar bg="bg-black" variant="dark" expand="lg">
         <Container fluid>
           <Navbar.Brand as={Link} to="/">
-            🗺 WorldView
+          🌎 WorldView 
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="navbar" />
           <Navbar.Collapse id="navbar">
@@ -52,26 +52,41 @@ const AppNavbar = () => {
       {/* set modal data up */}
       <Modal
         size="lg"
+        style={{
+          color: 'black',
+          
+          
+        }}
         show={showModal}
         onHide={() => setShowModal(false)}
         aria-labelledby="signup-modal"
       >
         {/* tab container to do either signup or login component */}
-        <Tab.Container defaultActiveKey="login">
-          <Modal.Header closeButton>
-            <Modal.Title id="signup-modal">
+        <Tab.Container defaultActiveKey="login" >
+          <Modal.Header className="bg-dark">
+            <Modal.Title id="signup-modal"
+            style={{
+              textAlign: 'center',
+              fontFamily: 'Space Mono',
+              
+            }}>
               <Nav variant="pills">
                 <Nav.Item>
-                  <Nav.Link eventKey="login">Login</Nav.Link>
+                  <Nav.Link className="bg-dark" eventKey="login">Login</Nav.Link>
                 </Nav.Item>
                 <Nav.Item>
-                  <Nav.Link eventKey="signup">Sign Up</Nav.Link>
+                  <Nav.Link className="bg-dark" eventKey="signup">Sign Up</Nav.Link>
                 </Nav.Item>
               </Nav>
             </Modal.Title>
           </Modal.Header>
-          <Modal.Body>
-            <Tab.Content>
+          <Modal.Body
+          style={{
+            backgroundColor: 'darkgray',
+            fontFamily: 'Space Mono'
+            
+          }}>
+            <Tab.Content >
               <Tab.Pane eventKey="login">
                 <LoginForm handleModalClose={() => setShowModal(false)} />
               </Tab.Pane>
@@ -96,14 +111,17 @@ const AppNavbar = () => {
         aria-labelledby="about-modal"
       >
         {/* tab container to do either signup or login component */}
-        <Modal.Header className="bg-dark" >
+        <Modal.Header className="bg-dark">
           <Modal.Title style={{
-          textAlign: 'center'
+          textAlign: 'center',
+          fontFamily: 'Space Mono'
+          
         }}>What is WorldView, and how do we use it?</Modal.Title>
         </Modal.Header>
 
         <Modal.Body style={{
-          backgroundColor: 'darkgray'
+          backgroundColor: 'darkgray',
+          fontFamily: 'Space Mono'
         }}>
           <p>
             🌎 WorldView is an eductional application, using React.js, GraphQL, Three.js,
