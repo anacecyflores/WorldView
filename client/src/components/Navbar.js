@@ -116,7 +116,7 @@ const AppNavbar = () => {
           textAlign: 'center',
           fontFamily: 'Space Mono'
           
-        }}>What is WorldView, and how do we use it?</Modal.Title>
+        }}>What is WorldView and How to Use It?</Modal.Title>
         </Modal.Header>
 
         <Modal.Body style={{
@@ -124,11 +124,11 @@ const AppNavbar = () => {
           fontFamily: 'Space Mono'
         }}>
           <p>
-            🌎 WorldView is an eductional application, using React.js, GraphQL, Three.js,
-            React-three-fiber which is a React renderer for three.js. This application
-            functions as visual eductional resource for students to learn about
-            historical moments that occured in different centuries around the world. Hover over any coordinate on
-            the globe to see the title of the event that occured, and click to see more!
+            🌎 WorldView is an eductional application created using React.js, GraphQL, Three.js, and
+            React-three-fiber, a React renderer for three.js. This application
+            functions as visual eductional resource for students of all ages to learn about
+            historical moments that occured in different centuries around the globe. Hover over any coordinate to see 
+            the title and location of the event that occured, and click on the coordinate to learn more!
             Be sure to create an account so you can save your favorite moments in history.
           </p>
           <br></br>

@@ -4,6 +4,7 @@ import Button from "react-bootstrap/Button";
 import Jumbotron from "react-bootstrap/Jumbotron";
 import Col from "react-bootstrap/Col";
 import Form from "react-bootstrap/Form";
+import Row from 'react-bootstrap/Row';
 import Card from "react-bootstrap/Card";
 import CardColumns from "react-bootstrap/CardColumns";
 import Container from "react-bootstrap/Container";
@@ -100,10 +101,11 @@ const SearchMoments = () => {
             
           </p>
 
-          <Form onSubmit={handleFormSubmit}>
-            {/* <h5>Country</h5> */}
-            <Form.Row>
-              <Col sm>
+          <Form onSubmit={handleFormSubmit} style={{
+                textAlign: 'center'
+              }}>
+            <Row>
+              <Col >
                   {/* <p>Event</p> */}
                   <Form.Control
                     name="eventSearchInput"
@@ -117,37 +119,30 @@ const SearchMoments = () => {
                     placeholder="ie: wars, elections, deaths"
                   />
               </Col>
-              <Col sm className="mt-1" style={{
+              <Col className="mt-1" style={{
                 textAlign: 'center'
-
               }}>
                 {/* <p>Century</p> */}
                 <Form.Control as="select" size="sm"
                 style={{
                   display: 'inline'
+
                 }}>
                   <option>Select a Century</option>
                   <option value="1">1800's</option>
                   <option value="2">1900's</option>
                   <option value="3">2000's</option>
                 </Form.Control>
-                
-                <Button
-                  as="input"
-                  type="button"
-                  className="mt-1"
-                  value="Search Events 🌎"
-                  size="med"
-                />
-              
               </Col>
-            </Form.Row>
-
-            
-            <Form.Row >
+            </Row>
+            <Button 
+              as="input"
+              type="button"
+              value="Search Events 🌎"
+              size="med"
+              className="mt-1"
               
-              
-            </Form.Row>
+            />
           </Form>
         </Container>
       </Jumbotron>
