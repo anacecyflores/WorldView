@@ -275,10 +275,10 @@ export function Earth(props) {
 
       {/* stars background effect */}
       <Stars
-        radius={90}
+        radius={50}
         depth={5}
         count={20000}
-        factor={3}
+        factor={2}
         saturation={0}
         fade={true}
       />

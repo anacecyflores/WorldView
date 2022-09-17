@@ -4,6 +4,7 @@ import { Navbar, Nav, Container, Modal, Tab } from 'react-bootstrap';
 import SignUpForm from './SignupForm';
 import LoginForm from './LoginForm';
 import Auth from '../utils/auth';
+import Card from 'react-bootstrap/Card'
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Mason from '../assets/screenshots/mason.jpeg';
@@ -146,32 +147,46 @@ const AppNavbar = () => {
             fontFamily: 'Space Mono',
           }}
         >
-          <p>
-            🌎 WorldView is an eductional application created using React.js,
-            GraphQL, Three.js, and React-three-fiber, a React renderer for
-            three.js. This application functions as visual eductional resource
-            for students of all ages to learn about historical moments that
-            occured in different centuries around the globe. Hover over any
-            coordinate to see the title and location of the event that occured,
-            and click on the coordinate to learn more! Be sure to create an
-            account so you can save your favorite moments in history.
-          </p>
-          <br></br>
-          <p>
-            <strong>Creators </strong>Ana Cecy Flores, Cristian Vargas, Mason
-            Benson
-          </p>
-          <Row>
-            <Col sm>
-              <img src={Ana} className="img-fluid rounded" alt="example" />
-            </Col>
-            <Col sm>
-              <img src={Cristian} className="img-fluid rounded" alt="example" />
-            </Col>
-            <Col sm>
-              <img src={Mason} className="img-fluid rounded" alt="example" />
-            </Col>
-          </Row>
+          <Card style={{ width: '29rem' }}>
+            <Card.Body>
+              <Card.Text style={{
+                color: 'black'
+              }}>
+              <p>
+                🌎 WorldView is an eductional application created using React.js,
+                GraphQL, Three.js, and React-three-fiber, a React renderer for
+                three.js. This application functions as visual eductional resource
+                for students of all ages to learn about historical moments that
+                occured in different centuries around the globe. Hover over any
+                coordinate to see the title and location of the event that occured,
+                and click on the coordinate to learn more! Be sure to create an
+                account so you can save your favorite moments in history.
+              </p>
+              </Card.Text>
+            </Card.Body>
+            <Card.Body>
+              <Card.Text style={{
+                color: 'black'
+              }}>
+              <p>
+                <strong>Creators </strong>Ana Cecy Flores, Cristian Vargas, Mason
+                Benson
+              </p>
+              </Card.Text>
+              <Row>
+                <Col sm>
+                  <img src={Ana} className="img-fluid rounded" alt="example" />
+                </Col>
+                <Col sm>
+                  <img src={Cristian} className="img-fluid rounded" alt="example" />
+                </Col>
+                <Col sm>
+                  <img src={Mason} className="img-fluid rounded" alt="example" />
+                </Col>
+              </Row>
+            </Card.Body>
+          </Card>    
+          
         </Modal.Body>
       </Modal>
 
@@ -202,11 +217,20 @@ const AppNavbar = () => {
             fontFamily: 'Space Mono',
           }}
         >
-          <p>{historyData.header}</p>
-          <p>{historyData.date}</p>
-          <p>{historyData.location}</p>
-          <p>{historyData.summary}</p>
-          <p>No Saved Events!</p>
+          <Card style={{ width: '29rem' }}>
+            <Card.Body>
+              <Card.Title style={{
+                color: 'black'
+              }}>🌎 {historyData.header}</Card.Title>
+              <Card.Subtitle className="mb-2 text-muted">{historyData.location}, {historyData.date}</Card.Subtitle>
+              <Card.Text style={{
+                color: 'black'
+              }}>
+              {historyData.summary}
+              </Card.Text>
+              <Card.Link href={historyData.Link}>Learn More</Card.Link>
+            </Card.Body>
+          </Card>
         </Modal.Body>
       </Modal>
     </>
