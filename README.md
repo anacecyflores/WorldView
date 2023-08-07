@@ -1,4 +1,5 @@
-# WorldView 🗺
+# OurWorldViews 🗺
+www.worldviews.com
 
 🌍 [Deployed App Link](https://my-world-view.herokuapp.com/) 🌎
 
